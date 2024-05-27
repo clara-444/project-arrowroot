@@ -1,4 +1,10 @@
 /* || General Styles */
+@font-face {
+    font-family: 'Computer Says No';
+    src: url("../assets/font/computer-says-no.ttf") format('truetype');
+  }
+  
+
 :root {
     --colour-orange: 255, 130, 83;
     --colour-lgreen:209, 228, 135;
@@ -6,7 +12,7 @@
     --colour-brown: 224, 197, 156;
     --colour-bg: 244, 244, 244;
     --font-baskerville: 'Libre Baskerville', sans-serif;  /*!!!*//* confirm fallback fonts*/
-    --font-kode: "Computer Says No", "Kode Mono", monospace, sans-serif; /*!!!*//* confirm alt from computer say no: adhere by liscence terms https://creativecommons.org/licenses/by-sa/3.0/ */
+    --font-kode: "Computer Says No", "Kode Mono", sans-serif; /*!!!*//* confirm alt from computer say no: adhere by liscence terms https://creativecommons.org/licenses/by-sa/3.0/ */
     --font-arial: Arial, Helvetica, sans-serif;
 }
 
@@ -56,6 +62,7 @@ header {
 
 /* !!! clickable logo */
 .logo {
+    margin: 0.5rem;
     width: 150px; /*!!!*//* change to %*/
     cursor: pointer; /*!!!*//* delete if remove functionality*/
     border-radius: 3rem;
@@ -73,6 +80,8 @@ nav {
 }
 
 nav > ul {
+    margin-top: 1em;
+    margin-right: 1em;
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: max-content;
@@ -88,7 +97,6 @@ nav > ul li {
 nav > ul a {
     padding: 0.25em 1.25em;
     border-radius: 1em;
-    
     background-color: rgb(var(--colour-bg)); /*!!!*//* delete after background added*/
 }
 
@@ -108,7 +116,7 @@ nav > ul .dropdown-options {
 }
 
 nav a:hover {
-    box-shadow: 0 8px 16px 0 rgba(0.2,0.2,0.2,0.2); /*!!!*//* change to percent */
+    box-shadow: 0 8px 16px 0 rgba(0.4,0.4,0.4,0.4); /*!!!*//* change to percent */
     transition: background-color 0.3s ease; 
 }
 
@@ -136,18 +144,19 @@ nav a:hover {
 }
 
 .intro > .content {
-    position: relative;
     z-index: 1;
     display: flex;
+    margin-right: 1rem;
     flex-direction: column;
     justify-content: center;
-    gap: 10px;
     background-color: rgba(var(--colour-bg));
     border-radius: 1em;
 }
 
 .intro > img {
     width: 100%;
+    height: auto;
+    margin-left: 1rem;
     height: auto;
     background-color: rgba(var(--colour-lgreen), 0.44);
     border-radius: 50%;
