@@ -1,0 +1,166 @@
+/* || General Styles */
+:root {
+    --colour-orange: 255, 130, 83;
+    --colour-lgreen:209, 228, 135;
+    --colour-dgreen: 46, 109, 30;
+    --colour-brown: 224, 197, 156;
+    --colour-bg: 244, 244, 244;
+    --font-baskerville: 'Libre Baskerville', sans-serif;  /*!!!*//* confirm fallback fonts*/
+    --font-kode: "Computer Says No", "Kode Mono", monospace, sans-serif; /*!!!*//* confirm alt from computer say no: adhere by liscence terms https://creativecommons.org/licenses/by-sa/3.0/ */
+    --font-arial: Arial, Helvetica, sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+html { 
+    text-align: left;
+    font-family: var(--font-arial);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+h1, h3 {
+    font-family: var(--font-baskerville);
+    font-weight: normal;
+}
+
+h2 {
+    font-family: var(--font-kode);
+    font-weight: normal;
+}
+
+h3 {
+    font-style: italic;
+}
+
+a {
+    text-decoration: none;
+    color: black; 
+}
+
+
+
+
+/* || Header & Main Nav */
+header {
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+/* !!! clickable logo */
+.logo {
+    width: 150px; /*!!!*//* change to %*/
+    cursor: pointer; /*!!!*//* delete if remove functionality*/
+    border-radius: 3rem;
+    padding: 0.5rem 1rem;
+    background-color: rgb(var(--colour-bg));
+}
+
+.logo > img {
+    width: 100%;
+}
+
+nav {
+    display: none; /*!!!*//* delete if remove functionality*/
+    font-family: var(--font-kode);
+}
+
+nav > ul {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 0.5rem;
+    list-style-type: none; 
+}
+
+nav > ul li {
+    list-style-type: none; 
+    z-index: 9;
+}
+
+nav > ul a {
+    padding: 0.25em 1.25em;
+    border-radius: 1em;
+    
+    background-color: rgb(var(--colour-bg)); /*!!!*//* delete after background added*/
+}
+
+nav > ul .dropdown-options {
+    display: none;   
+    position: absolute;
+}
+
+/* Display navigation when logo is hovered */
+.logo:hover + nav, nav:hover, nav.is-visible {
+    display: contents;
+}
+
+/* Display dropdown options when about button is hovered*/
+.dropdown-toggle:hover .dropdown-options {
+    display: table-column;
+}
+
+nav a:hover {
+    box-shadow: 0 8px 16px 0 rgba(0.2,0.2,0.2,0.2); /*!!!*//* change to percent */
+    transition: background-color 0.3s ease; 
+}
+
+.dropdown-options li {
+    font-size: .8rem;
+    row-gap: 0.5rem; 
+}
+
+
+
+/* || Main Sections */
+.intro {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 1em;
+    position: relative;
+}
+
+#bg-video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.intro > .content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    background-color: rgba(var(--colour-bg));
+    border-radius: 1em;
+}
+
+.intro > img {
+    width: 100%;
+    height: auto;
+    background-color: rgba(var(--colour-lgreen), 0.44);
+    border-radius: 50%;
+    padding: 4%;
+}
+
+span {
+    color: rgb(var(--colour-dgreen));
+}
+
+footer > p {
+    visibility: hidden;
+}
+
+
+
