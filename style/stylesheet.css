@@ -1,9 +1,8 @@
-/* || General Styles */
+/* || GENERAL STYLES */
 @font-face {
     font-family: 'Computer Says No';
     src: url("../assets/font/computer-says-no.ttf") format('truetype');
-  }
-  
+}
 
 :root {
     --colour-orange: 255, 130, 83;
@@ -11,15 +10,21 @@
     --colour-dgreen: 46, 109, 30;
     --colour-brown: 224, 197, 156;
     --colour-bg: 244, 244, 244;
+    --colour-green: 247, 255, 216;
+    --colour-green-2: 116, 139, 89;
+    --colour-blue: 231,251,255;
+    --colour-beige: 238,227,209;
     --font-baskerville: 'Libre Baskerville', sans-serif;  /*!!!*//* confirm fallback fonts*/
-    --font-kode: "Computer Says No", "Kode Mono", sans-serif; /*!!!*//* confirm alt from computer say no: adhere by liscence terms https://creativecommons.org/licenses/by-sa/3.0/ */
+    --font-csn: "Computer Says No", "Kode Mono", sans-serif; /*!!!*//* confirm alt from computer say no: adhere by liscence terms https://creativecommons.org/licenses/by-sa/3.0/ */
     --font-arial: Arial, Helvetica, sans-serif;
 }
+
 
 * {
     padding: 0;
     margin: 0;
     border: none;
+    max-width: 100%;
     box-sizing: border-box;
 }
 
@@ -29,147 +34,282 @@ html {
     font-size: 18px;
     font-weight: 400;
     line-height: 1.5;
+    height: 100%;
 }
 
 h1, h3 {
     font-family: var(--font-baskerville);
     font-weight: normal;
+    font-size: 3.1rem;
+    margin-bottom: 10px;
 }
 
-h2 {
-    font-family: var(--font-kode);
+h2, h4 {
+    font-family: var(--font-csn);
     font-weight: normal;
+    font-size: 2.5rem;
+    margin: 1.2rem;
+    word-spacing: 3px;
 }
 
-h3 {
+h3, h4 {
     font-style: italic;
 }
 
 a {
     text-decoration: none;
     color: black; 
+    font-size: larger;
 }
 
+span {
+    color: rgb(var(--colour-green-2));
+}
 
+button {
+    background-color: transparent;
+}
 
+/* || HEADE & MAIN NAV */
+/* background video at top left corner */
+#bg-video{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
 
-/* || Header & Main Nav */
-header {
-    display: flex;
-    justify-content: space-between;
+/* fixed positioning for logo & nav */
+#logo, nav {
+    position: fixed;
     z-index: 10;
 }
 
-/* !!! clickable logo */
-.logo {
-    margin: 0.5rem;
-    width: 150px; /*!!!*//* change to %*/
-    cursor: pointer; /*!!!*//* delete if remove functionality*/
+/* format logo */
+#logo {
+    top: 0;
+    left: 0;
+    margin: 1rem;
+    width: 150px;
+    cursor: pointer;
     border-radius: 3rem;
-    padding: 0.5rem 1rem;
-    background-color: rgb(var(--colour-bg));
+    padding: 0.5rem;
+    text-align: center;
 }
 
-.logo > img {
-    width: 100%;
+#logo > img {
+    width: 100px; 
+    place-self: center;
 }
 
-nav {
-    display: none; /*!!!*//* delete if remove functionality*/
+/* hide nav & dropdown until logo is clicked or hovered*/
+nav, nav > ul .dropdown-options {
+    display: none;
     font-family: var(--font-kode);
 }
 
+/* format nav menu */
 nav > ul {
-    margin-top: 1em;
-    margin-right: 1em;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 1rem;
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: max-content;
     gap: 0.5rem;
-    list-style-type: none; 
+    z-index: 11;
 }
 
-nav > ul li {
-    list-style-type: none; 
-    z-index: 9;
+/* format nav links */
+#logo, nav > ul a {
+    background-color: rgb(var(--colour-bg));
+    font-family: var(--font-csn); 
 }
 
 nav > ul a {
     padding: 0.25em 1.25em;
     border-radius: 1em;
-    background-color: rgb(var(--colour-bg)); /*!!!*//* delete after background added*/
 }
 
-nav > ul .dropdown-options {
-    display: none;   
-    position: absolute;
+nav > ul li {
+    list-style-type: none;
 }
 
-/* Display navigation when logo is hovered */
-.logo:hover + nav, nav:hover, nav.is-visible {
+/* display navigation when logo is hovered */
+#logo:hover + nav, nav:hover, nav.is-visible {
     display: contents;
 }
 
-/* Display dropdown options when about button is hovered*/
+/* display dropdown options when about button is hovered*/
 .dropdown-toggle:hover .dropdown-options {
-    display: table-column;
+    display: block;
 }
 
-nav a:hover {
+/* display shadow when hovering on links */
+nav a:hover, button:hover{
     box-shadow: 0 8px 16px 0 rgba(0.4,0.4,0.4,0.4); /*!!!*//* change to percent */
     transition: background-color 0.3s ease; 
 }
 
+/* format dropdown options */
 .dropdown-options li {
+    max-width: 100%;
     font-size: .8rem;
-    row-gap: 0.5rem; 
+    row-gap: 1rem; 
 }
 
 
 
-/* || Main Sections */
-.intro {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 1em;
+
+/* || TITLE SECTION */
+#title {
+    height: 670px;
+    margin-top: 100px;
     position: relative;
-}
-
-#bg-video {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    z-index: -1;
-}
-
-.intro > .content {
-    z-index: 1;
+    top: 0;
+    left: 0;
     display: flex;
-    margin-right: 1rem;
+    place-items: center;
+    overflow: hidden;
+    margin-left: 7%;
+}
+
+#title > img {
+    position: absolute;
+    left: 20px; /*!!!*/
+    height: 80%;
+    width: auto;
+    padding: 1rem;
+    border-radius: 50%;
+    background-color: rgba(var(--colour-lgreen), 0.44);
+    z-index: 1;
+}
+
+#title-content {
+    position: relative;
+    left: 295px; /*!!!*/
+    width: 70%;
+    height: 87%;
+    padding: 0 3rem 1rem 25%;
+    border-radius: 1.5rem;
+    background-color: rgb(var(--colour-bg));
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: rgba(var(--colour-bg));
-    border-radius: 1em;
+}
+
+#home-nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+    gap: 1rem;
+    height: 10%;
+}
+
+#home-nav button img {
+    height: 1rem;
+    cursor: pointer;
+}
+
+#title-content h1 {
+    text-align: left;
+    height: 80%;
+    padding-top: 6rem;
+    font-weight: 600;
+} 
+
+#title-content a h2 {
+    text-align: right;
+}
+
+
+
+
+
+
+
+
+/* || INTRO SECTION */
+#intro {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem; 
+    flex-wrap: wrap;
+    background: radial-gradient(circle at center, rgb(var(--colour-green)) 0%, rgb(var(--colour-orange)) 50%, rgb(var(--colour-beige)) 100%);  
+}
+
+#intro > h2 {
+    text-align: center;
+    width: 100%; 
+    margin-bottom: 1rem;
+}
+
+/* draw arrow */
+#intro h2::before {
+    content: "";
+    border-left: 10px solid transparent; 
+    border-right: 10px solid transparent;
+    border-top: 10px solid black; /* Adjust the color as needed */
+    display: block; /* Use block to place it above the element */
+    width: 0;
+    height: 0;
+    margin-bottom: 5px; /* Space between the arrow and the h2 element */
+    margin-left: auto; /* Center the arrow horizontally */
+    margin-right: auto;
+  }
+  
+
+#intro > div {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: calc(25% - 1rem);
+    overflow: hidden;
+    border-radius: 3rem;
+}
+
+#intro img {
+    width: auto; 
+    height: 450px; 
+    object-fit: cover;
+    border-radius: 3rem;
+}
+
+.blue {
+    background-image: linear-gradient(to bottom, rgb(var(--colour-blue)), transparent);
+    border-radius: 3rem;
+    padding: 1rem;
+}
+
+.green {
+    background-color: rgba(var(--colour-green), 0.3);
+    border: 2px solid black;
+    width: 100%;
+    transform: translateY(-20px);
+}
+
+.orange {
+    background-color: rgba(var(--colour-orange), 0.3);
+    border: 2px solid black;
+    transform: translateY(20px);
+    
 }
 
 .intro > img {
-    width: 100%;
-    height: auto;
-    margin-left: 1rem;
-    height: auto;
-    background-color: rgba(var(--colour-lgreen), 0.44);
-    border-radius: 50%;
-    padding: 4%;
-}
-
-span {
-    color: rgb(var(--colour-dgreen));
-}
-
-footer > p {
-    visibility: hidden;
+    position: absolute;
+    display: block;
+    margin-top: -20px;
+    width: 300px;
 }
 
 
-
+ 
