@@ -308,6 +308,7 @@ nav a:hover, button:hover{
 
 .intro > img {
     position: absolute;
+    transform: translateY(-50px);
     display: block;
     margin-top: -20px;
     width: 300px;
@@ -321,9 +322,8 @@ nav a:hover, button:hover{
 .grid-container {
     display: grid;
     grid-template-columns: repeat(6, 1fr); /* 6 columns */
-    gap: 25px;
-    padding: 1%;
-    margin-bottom: 5px;
+    gap: 35px;
+    padding: 40px;
 }
 
 .sdg-button {
@@ -341,7 +341,7 @@ nav a:hover, button:hover{
 .sdg-button img { 
     margin: 2.5px;
     border: none;
-    padding: none;
+    padding: 3rem;
     height: auto; 
     transition: transform 0.3s ease; /* smooth transition for click effect */
 }
@@ -357,7 +357,18 @@ nav a:hover, button:hover{
   
 .grid-container video {
     position: absolute;
+    left: 0;
+    transform: translateY(-40px);
     z-index: -2;
+}
+
+.grid-container > h2 {
+    position: relative;
+    display: inline;
+    left: 50vw;
+    background-color: rgb(var(--colour-bg));
+    border-radius: 3rem;
+    
 }
 
 
