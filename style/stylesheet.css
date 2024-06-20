@@ -1,83 +1,108 @@
-/* || GENERAL STYLES || */
+/* |||| GENERAL STYLES |||| */
 @font-face {
     font-family: 'Computer Says No';
     src: url("../assets/font/computer-says-no.ttf") format('truetype');
 }
 
-/* define variables */
+/* variables */
 :root {
-    --colour-green: hsl(88, 22%, 45%);
-    --colour-lgreen: hsl(72, 63%, 71%);
-    --colour-transparent-lgreen: hsl(72, 63%, 71%, 0.6);
-    --colour-dgreen: hsl(108, 57%, 27%);
-    --colour-orange: hsl(16, 100%, 66%); 
-    --colour-blue: hsl(190, 100%, 95%);
-    --colour-beige: hsl(37, 46%, 88%);
-    --colour-brown: hsl(36, 52%, 75%);
-    --colour-bg: hsl(0, 0%, 96%);
-    --colour-transparent-bg: hsla(0, 0%, 96%, 0.70);
-    --font-baskerville: 'Libre Baskerville', sans-serif;  /*!!!*//* confirm fallback fonts*/
+    /* colours */
+    --colour-green-1: #effedc;
+    --colour-green-2: #748c5a;
+    --colour-green-3: #d1e486;
+    --colour-green-3-transparent: #d1e48680;
+    --colour-orange: #ff8052;
+    --colour-orange-light: #feca9f; 
+    --colour-blue-1: #d4f6fc;
+    --colour-blue-2: #EEFAFF80;
+    --colour-blue-3: #DBEAF080;
+    --colour-blue-4: #C8DDE780;
+    --colour-blue-5: #B4D0DD80;
+    --colour-blue-6: #A2C9D580;
+    --colour-blue-7: #A0C4D380;
+    --colour-blue-8: #85A5B480;
+    --colour-blue-9: linear-gradient(90deg, #7496a680, #525b7480);
+    --colour-teal: #c0f2d5;
+    --colour-beige: #eee4d2;
+    --colour-brown: #e0c69e;
+    --colour-bg: #F4F4F4 ;
+    --colour-bg-transparent: #f5f5f5b3;
+    --colour-lightened-text: #737373;
+    /* fonts */
+    --font-baskerville: 'Libre Baskerville', sans-serif;  
     --font-csn: "Computer Says No", "Kode Mono", sans-serif; /*!!!*//* confirm alt from computer say no: adhere by liscence terms https://creativecommons.org/licenses/by-sa/3.0/ */
-    --font-arial: Arial, Helvetica, sans-serif;
-    --box-shadow: 0 8px 16px 0 rgba(0.4,0.4,0.4,0.4);
-
-    --screen-height: 768px;
+    --font-arial: Arial, Helvetica, sans-serif; /* !!! ADD arial nova */
+    /* spacing */
     --element-spacing: 0.3rem;
-    --section-margin-spacing: 5vw;
-    --rounded-border-size: 9999px /* set to 9999px to ensure borders are rounded properly */
+    --section-padding-spacing: 5vw;
+    --section-content-size: (100% - 2 * var(--section-padding-spacing));
+    /* general styles */
+    --box-shadow: 0 8px 16px 0 rgba(0.4,0.4,0.4,0.4);
+    --screen-height: 780px;
+    --rounded-border-size: 9999px; /* set to 9999px to ensure borders are rounded properly */
+    --slight-rounded-border-size: 50px;
+    --vertical-line-height: 90px;
+    --arrow-height: 15px;
+    --large-circular-element-size: 150px;
 }
 
-/* general styles */
+/* html element styles */
 * {
     max-width: 100vw;
     box-sizing: border-box;
     border: none;
 }
-
 html { 
     font-family: var(--font-arial);
     font-size: 18px;
     font-weight: 400;
     line-height: 1.5;
 }
-
 html, body, header, main {
     width: 100%;
-    height: 100%;
     margin: 0;
 }
 
-h1, h2, h3, h4 { all: unset; }
-h1, h3 { font-family: var(--font-baskerville); font-size: 2rem; }
-h2, h4 { font-family: var(--font-csn); font-size: 2rem; }
-h3, h4 { font-style: italic; }
+header { height: 0; }
 
-a { all: unset; }
+button, a { all: unset; cursor: pointer;}
+h1, h2, h3, h4, p, ul, li { all: unset; }
 
-span { color: var(--colour-green); }
+h1, h3 { font-family: var(--font-baskerville); }
+h2 { font-family: var(--font-csn); }
+h4 { font-family: var(--font-arial); }
+h1, h2 {font-size: 2rem;}
+h3 { font-style: italic; font-size: 1.5rem;}
+h4 { font-weight: bold;}
 
-button { all: unset; cursor: pointer;}
+ul li { list-style-type: none; } 
 
-nav > ul li { list-style-type: none; } /* remove bullet style for lists inside nav */
+span { color: var(--colour-green-2); }
 
-
-
-
+footer { padding: calc(var(--section-padding-spacing) / 3); } 
 
 
-/* || CLASSES || */
 
+
+/* |||| DEFINED CLASSES |||| */
 .section {
     position: relative;
-    padding: var(--section-margin-spacing);
+    padding: var(--section-padding-spacing);
     margin: 0;
     border: 0;
-    width: 100%;
-    height: var(--screen-height);    
+    width: 100%;   
+    min-height: 100vh;
+    text-align: center;
+}
+
+.section-title {
+    display: block;
+    margin-bottom: calc(var(--element-spacing) * 2);
+    font-size: 2.3rem;
 }
 
 /* background looped videos */
-.bg-video{
+.bg-media {
     position: absolute;
     left: 0;
     top: 0;
@@ -88,180 +113,538 @@ nav > ul li { list-style-type: none; } /* remove bullet style for lists inside n
 }
 
 /* display shadow on hover */
-.logo:hover, .main-nav a:hover {
-    box-shadow: var(--box-shadow); /* !!! can apply diff colour shadows */
+.shadow-on-hover:hover {
+    box-shadow: var(--box-shadow); 
     transition: background-color 0.3s ease; 
+    cursor: pointer;
 }
 
+/* link to instagram */
 .instagram-link > h2 {
     font-size: 1.5rem;
-    letter-spacing: calc(var(--element-spacing) *2/3);
+    letter-spacing: calc(var(--element-spacing) * 2/3);
+    cursor: pointer; }
+.instagram-link:hover {
+    color: var(--colour-green-2);
+    font-size: larger;
+    text-decoration: underline;
+}
+
+.social-link > img {
+    width: 55px;
+    border-radius: 15px;
+    margin: 2.5px;
+    margin-top: 10px;
+}
+
+/* center image in a container */
+.contained-img {
+    object-fit: contain;
+    width: 100%;
+    vertical-align: middle;
+}
+
+ /* draw and center a solid black line */
+.vertical-line {
+    position: absolute;
+    border-left: 1.5px solid black;
+    height: var(--vertical-line-height); 
+    top: 0;
+    left: 50%; 
+}
+ 
+/* draw and center a solid black triangle */
+.down-arrow {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent; /* left side of the triangle */
+    border-right: 10px solid transparent; /* right side of the triangle */
+    border-top: var(--arrow-height) solid black; /* top side of the triangle, pointing downwards */
+    transform: translateX(-50%); /* center the triangle horizontally */
+}
+
+/* coloured containers */
+.colour-container {
+    padding: calc(var(--element-spacing) * 3);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;    }
+.green { background-color: var(--colour-green-1); }
+.blue1 { background-color: var(--colour-blue-1); }
+.blue2 { background-color: var(--colour-blue-2); }
+.blue3 { background-color: var(--colour-blue-3); }
+.blue4 { background-color: var(--colour-blue-4); }
+.blue5 { background-color: var(--colour-blue-5); }
+.blue6 { background-color: var(--colour-blue-6); }
+.blue7 { background-color: var(--colour-blue-7); }
+.blue8 { background-color: var(--colour-blue-8); }
+.blue9 { background: var(--colour-blue-9); }
+.beige { background-color: var(--colour-beige);}
+
+.centered-content-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    gap: calc(var(--element-spacing) * 4);
+}
+
+/* display a black line underneath element */
+.bottom-border {
+    margin: auto;
+    border-bottom: solid 1px black;
+    width: min(50%, 500px);
+    padding-bottom: calc(var(--element-spacing) * 2);
+    margin-bottom: calc(var(--element-spacing) * 2);
+}
+
+/* rounded section title */  
+.section-title-rounded {
+    display: inline-block;
+    margin-top: var(--section-padding-spacing);
+    margin-bottom: 0;
+    padding-left: var(--section-padding-spacing);
+    padding-right: var(--section-padding-spacing);
+    border-radius: var(--rounded-border-size) var(--rounded-border-size) 0 0;
+}
+
+.construction-section {
+    min-height: 80vh;
+}
+
+.under-construction {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 50%;
+    min-height: 200px;
+    transform: translate(-50%, -50%);
+    border: black 1px solid;
+    border-radius: 30px;
 }
 
 
 
-/* || MAIN HEADER || */
+/* |||| MAIN HEADER |||| */
 
 header {
     position: relative; /* backup pos for older browsers */
     position: fixed; /* fixed position for logo & main-nav */
     top: 0;
     left: 0;
-    padding: 1rem;
+    padding: 0 var(--section-padding-spacing);
+    padding-top: calc(var(--section-padding-spacing) / 3); 
     z-index: 10; 
     font-family: var(--font-csn); 
+    /* position logo & nav at opposite ends of screen*/
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    /**/
 }
-
 /* clickable elements */
 .logo, .main-nav > ul a {
     border-radius: var(--rounded-border-size); 
-    background-color: var(--colour-bg);
-    border: solid 0.5px rgba(80, 80, 80, 0.6); 
-    cursor: pointer;
+    background-color: var(--colour-bg); 
+    border: solid 0.5px rgba(80, 80, 80, 0.6);
 }
 
-/* logo */
+
+/* || LOGO || */
 .logo {
-    padding-right: 0.95rem;
-    padding-bottom: var(--element-spacing);
-    width: 174px;
-    text-align: right;
+    position: relative; /* set to relative to allow for absolute positioning of child element (img) */
+    padding: calc(var(--element-spacing) * 1.5) calc(var(--element-spacing) * 3);
+    padding-left: calc(var(--element-spacing) * 4); /* indents text by 1 extra element-spacing on the left to account for h1's increased letter spacing */
+    margin-right: var(--section-padding-spacing); /* prevent nav menu from wrapping too close to logo */
+    width: min-content; /* minimum possible size after wrapping all text */
+    height: max-content;
     z-index: 11;
+    /* center align child element (h1) */
+    display: flex; 
+    align-items: center;
 }
-.logo:hover::after {
+.logo > img {
+    position: absolute;
+    height: calc(0.8 * 1.5rem); /* line-height * font-size = height of h2 element text */
+    /* left align img to text with slight offset of 90% */
+    left: calc(var(--element-spacing) * 4 * (9/10));
+    top: calc(var(--element-spacing) * 1.5 * (9/10));
+}
+.logo > h2 {
+    display: inline-block;
+    text-align: right;
+    font-size: 1.5rem;
+    letter-spacing: var(--element-spacing);
+    line-height: 0.8;
+}
+/* display instructional message on hover */
+header .logo:hover::after {
     position: absolute;
     padding: var(--element-spacing);
-    transform: translate(-95%, 40px);
-    content: "Click to navigate Home :)";
-    background-color: var(--colour-transparent-bg);
+    /* position mesage centered beneath parent with a small (element-spacing) sized margin*/
+    top: 100%;
+    left: 50%;
+    margin-top: var(--element-spacing);
+    transform: translateX(-50%);
+    /**/
+    content: "click to navigate home :)";
+    background-color: var(--colour-bg-transparent);
     border-radius: 15px;
     text-wrap: nowrap;
 }
-.logo > img {
-    display: inline-block;
-    width: 35px; 
-    transform: translate(-2px, 8px);
-}
-.logo > h2 {
-    font-size: 1.5rem;
-    letter-spacing: var(--element-spacing);
-    line-height: 1;
-}
 
-/* !!! ADD MEDIA QUERY WHEN BUTTON OVERLAPS LOGO*/
-/* main-nav menu */
-.main-nav {
-    position: absolute;
+
+/* || MAIN-NAV MENU || */
+.main-nav { 
     top: 0;
     right: 0;
-    margin-right: 1rem;
+    /* set height equal to height of logo (setup for alignment)*/
+    height: calc((var(--element-spacing) * 1.5)*2 + (0.8 * 1.5rem)*2 ) ; /* logo-padding * 2 + logo-font-height * 2 */
     z-index: 10;
-}
-
-.main-nav > ul {
+    /* alignment of main-nav to bottom edge of logo */
     display: flex;
-    gap: 0.5rem;
+    justify-content: flex-end;
+    align-self: flex-start;
+}
+.main-nav > ul { /*!!! ADD FUNCTIONALITY TO OPEN BUTTONS ON CLICK OR HOVER*/
+    display: flex;
+    column-gap: var(--element-spacing);
+    /* wrap buttons in line with bottom edge of logo */
+    flex-wrap: wrap-reverse;
     justify-content: flex-end;
     align-items: flex-start;
+    flex: 1 1 0px; 
 }
-.main-nav > ul a {
-    padding: var(--element-spacing) 1.35em;
-    font-size: larger;
+.main-nav > ul > li > a { 
+    padding: var(--element-spacing) calc(var(--element-spacing) * 4);
+    font-size: 1.25rem;
+    line-height: 1;
 }
-
-/* hide dropdown until the "about" link is hovered*/
-.main-nav > ul .dropdown-options {
-    display: none; 
+/* hide dropdown until the toggle is hovered*/
+.dropdown-options {
+    display: none;
+    padding-top: var(--element-spacing);
+    flex-flow: column nowrap;
+    margin-left: var(--element-spacing);
 }
-
-/* display dropdown options when about button is hovered*/
+/* display dropdown options when dropdown-toggle is hovered*/
 .dropdown-toggle:hover .dropdown-options {
     position: absolute;
-    display: block;
-    transform: translateX(-25%);
+    display: flex;
 }
-
 /* format dropdown options */
-.dropdown-options li {
-    font-size: .8rem;
-    margin: calc(var(--element-spacing) / 3);
+ul.dropdown-options li a {
+    padding: calc(var(--element-spacing) / 1.25) calc(var(--element-spacing) * 4 / 1.25);
+    font-size: 1rem;
+    background-color: var(--colour-bg-transparent);
+}
+
+
+
+
+/* |||| MAIN FOOTER |||| */
+footer {
+    background-color: var(--colour-brown);
+    text-align: center;
+    border-radius: 30px 30px 0 0;
+    font-size: smaller;
+}
+
+.main-footer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.main-footer > .logo, .footer-links, .footer-social-links {
+    margin-bottom: var(--section-padding-spacing);
+}
+
+.main-footer > .footer-social-links > .colour-container {
+    border-radius: var(--rounded-border-size);
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 50px;
+}
+
+.footer-links {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: flex-start; 
+}
+.footer-links > .footer-link-section {
+    margin: 15px;
+    min-width: 150px;
+    flex-basis: 0;
+    text-align: left; 
+}
+.footer-links > .footer-link-section > ul > li {
+    display: block;
+    cursor: pointer;
+}
+
+.footer-legal > p {
+    display: block;
+}
+.footer-legal a {
+    text-decoration: underline;
 }
 
 
 
 
 
+/* |||| INDEX PAGE |||| */
 
-/* || INDEX PAGE || */
-
-/* <TITLE SECTION> */ 
-.title-section { /* !!! ADD MEDIA QUERY FOR WHEN GLOBE IS FULL SCREEN */
-    height: calc(var(--screen-height) * 4/5);
-    position: relative;
+/* ||| TITLE SECTION ||| */ 
+.section.home-title { 
+    position: relative; /* set to relative to allow for absolute positioning of child element (img) */
+    height: 100vh;
+    /* align section-content to left edge */
     display: flex;
     justify-content: right;
-    align-items: center;
-    margin-top: 80px;
+    align-items: end;
 }
 
-.title-section > .section-content {
-    width: 70%;
-    height: 100%;
-    margin-right: calc( var(--section-margin-spacing) / 2) ;
-    padding: 15px 15px 15px 28%;
-    border-radius: 60px;
+/* image of globe */
+.home-title > .img-container { 
+    position: absolute;
+    /* position to always be centered on left edge of section content */
+    top: calc(var(--section-padding-spacing) + 0.1 * var(--section-content-size) + 0.5 * 0.9 * var(--section-content-size)); /*add additional spacing to account for bottom alignment of section-content element*/
+    right: calc(var(--section-padding-spacing) + 7 / 10 * var(--section-content-size)); /*account for absolute reference point by calculating screen width - 2 padding-spacing */
+    transform: translate(50%, -50%);
+    /**/
+    padding: calc(var(--element-spacing) * 3.5); 
+    height: calc(0.85 * (0.9 * var(--section-content-size))); 
+    width: calc(0.85 * (0.9 * (100vh - 2*var(--section-padding-spacing))));
+    border-radius: 50%;
+    background-color: var(--colour-green-3-transparent);
+}
+
+.home-title > .section-content {
+    width: 70%; /*!!!CHECK*/
+    height: 93%;
+    padding: 1rem; 
+    padding-left: 15%;
+    border-radius: var(--slight-rounded-border-size); 
     background-color: var(--colour-bg);
-    overflow: hidden;
+    /* align right all child elements in a column */
     display: flex;
     flex-flow: column nowrap;
-    justify-content: right;
-    align-items: center;
+    overflow: hidden;
+    justify-content: space-between;
 }
 
-/* title image*/
-.title-section > .title-image {
-    position: absolute;
-    left: calc(30% - var(--section-margin-spacing) / 2);
-    padding: calc(var(--element-spacing) * 2);
-    width: 350px;
-    background-color: var(--colour-transparent-lgreen);
-    border-radius: 50%;
-    transform: translateX(-50%);
-}
-.title-section > .title-image > img {
-    object-fit: contain;
-    width: 100%;
-    vertical-align: middle;
+.home-title .home-nav, .home-title .instagram-link {
+    text-align: right;
 }
 
-/* home-nav */
-.home-nav button {
+/* style for home-nav */
+.home-title > .section-content > .home-nav button {
     border-radius: 50%;
-    padding: calc(var(--element-spacing) / 2);
-}
-.home-nav img {
+    padding: 5px; }
+.home-title > .section-content > .home-nav .contained-img {
     margin: var(--element-spacing);
-    object-fit: contain;
     width: 25px;
-    height: 24px;
-    vertical-align: middle;
-}
-.home-nav button:hover {
-    background-color: var(--colour-transparent-lgreen); /* !!! turns green on hover - can change */
+    height: 25px; }
+.home-title > .section-content > .home-nav button:hover { /*!!! ADD LINK TO BUTTONS */ 
+    background-color: var(--colour-green-3-transparent); 
 }
 
-/* adjust spacing for home-nav and instagram-link inside container*/
-.title-section > .section-content > .home-nav, .title-section > .section-content > .instagram-link {
-    padding-right: 1rem;
-    display: inline-block;
-    align-self: flex-end;
-    flex-grow: 1;
+/* style for title-text */
+.home-title > .section-content > .title-text {
+    text-align: left;
+    margin: 0 15%; } 
+.title-text > h1 {
+    font-size: 3rem;
+    line-height: normal;
 }
 
-/* adjust spacing for title-text inside container*/
-.title-section > .section-content > .title-text {
-    padding-right: 10%;
-    margin: 110px 0 110px 0;
-    flex-grow: 2;
-} 
+/* display image of globe only when screen width is 1300px*/
+@media (max-width: 1300px) { /*!!!ADD TRANSITION*/
+    .home-title > .section-content { 
+        padding-left: 1rem;
+    }
+    .home-title > .img-container {
+        display: none; 
+    }
+    .home-title > .section-content > .title-text {
+        align-self: center;
+    } 
+}
+
+
+
+/* ||| HOME SECTION 1 ||| */ 
+
+.section.home1 { /*!!! ADD MEDIA QUERY TO PREVENT AWKWARD WRAPPING OF 1 AND 3 */
+    /* make space for vertical line & arrow positioning */
+    padding-top: var(--vertical-line-height); 
+    padding-bottom: calc(var(--vertical-line-height) * 1.1) ;
+    /**/
+    background: radial-gradient(transparent , var(--colour-bg) 90%), linear-gradient(to right, var(--colour-orange-light) 40%, var(--colour-green-3) 50%);
+}
+
+.home1 > .centered-content-container > .flex-item {
+    width: min(50%, 290px);
+    overflow: hidden;
+}
+
+.home1 > .section-content p {
+    border-radius: var(--rounded-border-size)
+}
+
+
+
+/* ||| HOME SECTION 2 ||| */ 
+
+section.home2 {
+    padding-top: calc(var(--vertical-line-height) + var(--arrow-height)); /* make space for vertical line & arrow positioning */
+    padding-bottom: 0; 
+    background-color: var(--colour-beige); 
+    
+    background: linear-gradient(to bottom, transparent, var(--colour-beige) 30%), radial-gradient(transparent , var(--colour-bg) 90%), linear-gradient(to right, var(--colour-orange-light) 40%, var(--colour-green-3) 50%);
+}
+
+/* transform half the arrow line by 50% to overlap the previous home1 section */
+.home2 > .vertical-line {
+    height: calc(var(--vertical-line-height) * 2);
+    transform: translateY(-50%); }
+.home2 > .down-arrow {
+    margin-top: var(--vertical-line-height);
+}
+
+.home2 > .section-content {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.home2 > .section-content.left-align {
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.home2 > .section-content.right-align {
+    flex-direction: row-reverse;
+    align-items: flex-end;
+}
+
+.home2 > .section-content > div {
+    width: min(500px, 75%);
+    border: solid 1.5px black;
+    margin: calc(var(--element-spacing) * 3);
+    border-radius: 25px;
+    height: 170px;
+}
+
+.home2 > .section-content > .centered-content-container {
+    gap:calc(3 *  var(--element-spacing));
+}
+
+.home2 > .img-container { /* !!! ADD MEDIA QUERY FOR WHEN IMAGE OVERLAPS ELEMENTS: replace image with text */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 78%;
+    transform: translateY(31%);
+    text-align: center;
+}
+
+.home2 .section-title-rounded {
+    display: none;
+    background-color: var(--colour-teal); /*!!!CHANGE*/
+}
+
+@media (max-width: 1202px) {
+    .home2 > .img-container {
+        display: none;
+    }
+    .home2 .section-title-rounded {
+        display: inline-block;
+    }
+}
+
+
+
+/* ||| SDG SECTION ||| */ 
+.sdg {
+    padding-bottom: 0;
+}
+
+.sdg > .section-content {
+    margin-top: 35px;
+}
+
+.sdg > .section-content > .flex-item {
+    width: 160px;
+    margin: var(--element-spacing);
+}
+
+.sdg > .section-content > a.flex-item:hover {
+    transform: scale(1.05);
+}
+
+.sdg > .section-title-rounded {
+    background-color: var(--colour-bg);
+    color: var(--colour-lightened-text);
+}
+
+
+
+/* ||| HOME SECTION 3 ||| */ 
+.home3 {
+    color: var(--colour-lightened-text);
+    padding-bottom: calc(2 * (var(--large-circular-element-size)/2));
+    text-align: center;
+    min-height: 50vh;
+}
+
+.home3 > .section-content > .colour-container {
+    width: 250px;
+    height: 75px;
+    border-radius: 40px;
+}
+
+
+
+
+/* ||| HOME SECTION 4 ||| */ 
+.home4 {
+    position: relative;
+    padding: 0; /* allows positioning of both img elements to be flushed with section edge */
+    min-height: calc(3.2 * (0.5 * var(--large-circular-element-size)) + (80vw - 2*var(--section-padding-spacing)) / 2.97);
+}
+
+/* GO button */
+.home4 > .green.colour-container {
+    position: absolute;
+    width: var(--large-circular-element-size);
+    height: var(--large-circular-element-size);
+    border-radius: 50%;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+.home4 > .green.colour-container > h2 {
+    font-size: 6rem;
+}
+
+.home4 > .contained-img {
+    position: absolute;
+    left: 0;
+    z-index: -10;
+}
+
+.home4 > .bonsai {
+    position: absolute;
+    top: calc(3.2 * (var(--large-circular-element-size) / 2)); /* position to always be underneath button*/
+    left: 10%;
+    width: 80%;
+}
+
 
