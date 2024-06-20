@@ -1,380 +1,267 @@
-/* || GENERAL STYLES */
+/* || GENERAL STYLES || */
 @font-face {
     font-family: 'Computer Says No';
     src: url("../assets/font/computer-says-no.ttf") format('truetype');
 }
 
+/* define variables */
 :root {
-    --colour-orange: 255, 130, 83;
-    --colour-lgreen:209, 228, 135;
-    --colour-dgreen: 46, 109, 30;
-    --colour-brown: 224, 197, 156;
-    --colour-bg: 244, 244, 244;
-    --colour-green: 247, 255, 216;
-    --colour-green-2: 116, 139, 89;
-    --colour-blue: 231,251,255;
-    --colour-beige: 238,227,209;
+    --colour-green: hsl(88, 22%, 45%);
+    --colour-lgreen: hsl(72, 63%, 71%);
+    --colour-transparent-lgreen: hsl(72, 63%, 71%, 0.6);
+    --colour-dgreen: hsl(108, 57%, 27%);
+    --colour-orange: hsl(16, 100%, 66%); 
+    --colour-blue: hsl(190, 100%, 95%);
+    --colour-beige: hsl(37, 46%, 88%);
+    --colour-brown: hsl(36, 52%, 75%);
+    --colour-bg: hsl(0, 0%, 96%);
+    --colour-transparent-bg: hsla(0, 0%, 96%, 0.70);
     --font-baskerville: 'Libre Baskerville', sans-serif;  /*!!!*//* confirm fallback fonts*/
     --font-csn: "Computer Says No", "Kode Mono", sans-serif; /*!!!*//* confirm alt from computer say no: adhere by liscence terms https://creativecommons.org/licenses/by-sa/3.0/ */
     --font-arial: Arial, Helvetica, sans-serif;
+    --box-shadow: 0 8px 16px 0 rgba(0.4,0.4,0.4,0.4);
+
+    --screen-height: 768px;
+    --element-spacing: 0.3rem;
+    --section-margin-spacing: 5vw;
+    --rounded-border-size: 9999px /* set to 9999px to ensure borders are rounded properly */
 }
 
-
+/* general styles */
 * {
-    padding: 0;
-    margin: 0;
-    border: none;
-    max-width: 100%;
+    max-width: 100vw;
     box-sizing: border-box;
+    border: none;
 }
 
 html { 
-    text-align: left;
     font-family: var(--font-arial);
     font-size: 18px;
     font-weight: 400;
     line-height: 1.5;
+}
+
+html, body, header, main {
+    width: 100%;
     height: 100%;
+    margin: 0;
 }
 
-h1, h3 {
-    font-family: var(--font-baskerville);
-    font-weight: normal;
-    font-size: 3.1rem;
-    margin-bottom: 10px;
+h1, h2, h3, h4 { all: unset; }
+h1, h3 { font-family: var(--font-baskerville); font-size: 2rem; }
+h2, h4 { font-family: var(--font-csn); font-size: 2rem; }
+h3, h4 { font-style: italic; }
+
+a { all: unset; }
+
+span { color: var(--colour-green); }
+
+button { all: unset; cursor: pointer;}
+
+nav > ul li { list-style-type: none; } /* remove bullet style for lists inside nav */
+
+
+
+
+
+
+/* || CLASSES || */
+
+.section {
+    position: relative;
+    padding: var(--section-margin-spacing);
+    margin: 0;
+    border: 0;
+    width: 100%;
+    height: var(--screen-height);    
 }
 
-h2, h4 {
-    font-family: var(--font-csn);
-    font-weight: normal;
-    font-size: 2.5rem;
-    margin: 1.2rem;
-    word-spacing: 3px;
-}
-
-h3, h4 {
-    font-style: italic;
-}
-
-a {
-    text-decoration: none;
-    color: black; 
-    font-size: larger;
-}
-
-span {
-    color: rgb(var(--colour-green-2));
-}
-
-button {
-    background-color: transparent;
-}
-
-/* || HEADE & MAIN NAV */
-/* background video at top left corner */
-#bg-video{
+/* background looped videos */
+.bg-video{
     position: absolute;
     left: 0;
     top: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    z-index: -1;
+    z-index: -10;
 }
 
-/* fixed positioning for logo & nav */
-#logo, nav {
-    position: fixed;
-    z-index: 10;
+/* display shadow on hover */
+.logo:hover, .main-nav a:hover {
+    box-shadow: var(--box-shadow); /* !!! can apply diff colour shadows */
+    transition: background-color 0.3s ease; 
 }
 
-/* format logo */
-#logo {
+.instagram-link > h2 {
+    font-size: 1.5rem;
+    letter-spacing: calc(var(--element-spacing) *2/3);
+}
+
+
+
+/* || MAIN HEADER || */
+
+header {
+    position: relative; /* backup pos for older browsers */
+    position: fixed; /* fixed position for logo & main-nav */
     top: 0;
     left: 0;
-    margin: 1rem;
-    width: 150px;
-    cursor: pointer;
-    border-radius: 3rem;
-    padding: 0.5rem;
-    text-align: center;
-}
-
-#logo > img {
-    width: 100px; 
-    place-self: center;
-}
-
-/* hide nav & dropdown until logo is clicked or hovered*/
-nav, nav > ul .dropdown-options {
-    display: none;
-    font-family: var(--font-kode);
-}
-
-/* format nav menu */
-nav > ul {
-    position: fixed;
-    top: 0;
-    right: 0;
-    margin: 1rem;
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: max-content;
-    gap: 0.5rem;
-    z-index: 11;
-}
-
-/* format nav links */
-#logo, nav > ul a {
-    background-color: rgb(var(--colour-bg));
+    padding: 1rem;
+    z-index: 10; 
     font-family: var(--font-csn); 
 }
 
-nav > ul a {
-    padding: 0.25em 1.25em;
-    border-radius: 1em;
+/* clickable elements */
+.logo, .main-nav > ul a {
+    border-radius: var(--rounded-border-size); 
+    background-color: var(--colour-bg);
+    border: solid 0.5px rgba(80, 80, 80, 0.6); 
+    cursor: pointer;
 }
 
-nav > ul li {
-    list-style-type: none;
+/* logo */
+.logo {
+    padding-right: 0.95rem;
+    padding-bottom: var(--element-spacing);
+    width: 174px;
+    text-align: right;
+    z-index: 11;
+}
+.logo:hover::after {
+    position: absolute;
+    padding: var(--element-spacing);
+    transform: translate(-95%, 40px);
+    content: "Click to navigate Home :)";
+    background-color: var(--colour-transparent-bg);
+    border-radius: 15px;
+    text-wrap: nowrap;
+}
+.logo > img {
+    display: inline-block;
+    width: 35px; 
+    transform: translate(-2px, 8px);
+}
+.logo > h2 {
+    font-size: 1.5rem;
+    letter-spacing: var(--element-spacing);
+    line-height: 1;
 }
 
-/* display navigation when logo is hovered */
-#logo:hover + nav, nav:hover, nav.is-visible {
-    display: contents;
+/* !!! ADD MEDIA QUERY WHEN BUTTON OVERLAPS LOGO*/
+/* main-nav menu */
+.main-nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 1rem;
+    z-index: 10;
+}
+
+.main-nav > ul {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+.main-nav > ul a {
+    padding: var(--element-spacing) 1.35em;
+    font-size: larger;
+}
+
+/* hide dropdown until the "about" link is hovered*/
+.main-nav > ul .dropdown-options {
+    display: none; 
 }
 
 /* display dropdown options when about button is hovered*/
 .dropdown-toggle:hover .dropdown-options {
+    position: absolute;
     display: block;
-}
-
-/* display shadow when hovering on links */
-nav a:hover, button:hover{
-    box-shadow: 0 8px 16px 0 rgba(0.4,0.4,0.4,0.4); /*!!!*//* change to percent */
-    transition: background-color 0.3s ease; 
+    transform: translateX(-25%);
 }
 
 /* format dropdown options */
 .dropdown-options li {
-    max-width: 100%;
     font-size: .8rem;
-    row-gap: 1rem; 
+    margin: calc(var(--element-spacing) / 3);
 }
 
 
 
 
-/* || TITLE SECTION */
-#title {
-    height: 670px;
-    margin-top: 100px;
+
+
+/* || INDEX PAGE || */
+
+/* <TITLE SECTION> */ 
+.title-section { /* !!! ADD MEDIA QUERY FOR WHEN GLOBE IS FULL SCREEN */
+    height: calc(var(--screen-height) * 4/5);
     position: relative;
-    top: 0;
-    left: 0;
     display: flex;
-    place-items: center;
-    overflow: hidden;
-    margin-left: 7%;
-}
-
-#title > img {
-    position: absolute;
-    left: 20px; /*!!!*/
-    height: 80%;
-    width: auto;
-    padding: 1rem;
-    border-radius: 50%;
-    background-color: rgba(var(--colour-lgreen), 0.44);
-    z-index: 1;
-}
-
-#title-content {
-    position: relative;
-    left: 295px; /*!!!*/
-    width: 70%;
-    height: 87%;
-    padding: 0 3rem 1rem 25%;
-    border-radius: 1.5rem;
-    background-color: rgb(var(--colour-bg));
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-#home-nav {
-    display: flex;
-    justify-content: flex-end;
-    padding: 1rem;
-    gap: 1rem;
-    height: 10%;
-}
-
-#home-nav button img {
-    height: 1rem;
-    cursor: pointer;
-}
-
-#title-content h1 {
-    text-align: left;
-    height: 80%;
-    padding-top: 6rem;
-    font-weight: 600;
-} 
-
-#title-content a h2 {
-    text-align: right;
-}
-
-
-
-
-
-
-
-
-/* || INTRO SECTION */
-#intro {
-    width: 100%;
-    height: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 100px;
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem; 
-    flex-wrap: wrap;
-    background: radial-gradient(circle at center, rgb(var(--colour-green)) 0%, rgb(var(--colour-green-2)) 50%, rgb(var(--colour-beige)) 100%);  
-}
-
-#intro > h2 {
-    text-align: center;
-    width: 100%; 
-    margin-bottom: 1rem;
-}
-
-/* draw arrow */
-#intro h2::before {
-    content: "";
-    border-left: 10px solid transparent; 
-    border-right: 10px solid transparent;
-    border-top: 10px solid black; /* Adjust the color as needed */
-    display: block; /* Use block to place it above the element */
-    width: 0;
-    height: 0;
-    margin-bottom: 5px; /* Space between the arrow and the h2 element */
-    margin-left: auto; /* Center the arrow horizontally */
-    margin-right: auto;
-  }
-  
-
-#intro > div {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
+    justify-content: right;
     align-items: center;
-    text-align: center;
-    width: calc(25% - 1rem);
+    margin-top: 80px;
+}
+
+.title-section > .section-content {
+    width: 70%;
+    height: 100%;
+    margin-right: calc( var(--section-margin-spacing) / 2) ;
+    padding: 15px 15px 15px 28%;
+    border-radius: 60px;
+    background-color: var(--colour-bg);
     overflow: hidden;
-    border-radius: 3rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: right;
+    align-items: center;
 }
 
-#intro img {
-    width: auto; 
-    height: 450px; 
-    object-fit: cover;
-    border-radius: 3rem;
+/* title image*/
+.title-section > .title-image {
+    position: absolute;
+    left: calc(30% - var(--section-margin-spacing) / 2);
+    padding: calc(var(--element-spacing) * 2);
+    width: 350px;
+    background-color: var(--colour-transparent-lgreen);
+    border-radius: 50%;
+    transform: translateX(-50%);
 }
-
-.blue {
-    background-image: linear-gradient(to bottom, rgb(var(--colour-green)), transparent);
-    border-radius: 3rem;
-    padding: 1rem;
-}
-
-.green {
-    background-color: rgba(var(--colour-green), 0.5);
-    border: 2px solid black;
+.title-section > .title-image > img {
+    object-fit: contain;
     width: 100%;
-    transform: translateY(-20px);
+    vertical-align: middle;
 }
 
-.orange {
-    background-color: rgba(var(--colour-orange), 0.3);
-    border: 2px solid black;
-    transform: translateY(20px);
-    
+/* home-nav */
+.home-nav button {
+    border-radius: 50%;
+    padding: calc(var(--element-spacing) / 2);
+}
+.home-nav img {
+    margin: var(--element-spacing);
+    object-fit: contain;
+    width: 25px;
+    height: 24px;
+    vertical-align: middle;
+}
+.home-nav button:hover {
+    background-color: var(--colour-transparent-lgreen); /* !!! turns green on hover - can change */
 }
 
-.intro > img {
-    position: absolute;
-    transform: translateY(-50px);
-    display: block;
-    margin-top: -20px;
-    width: 300px;
+/* adjust spacing for home-nav and instagram-link inside container*/
+.title-section > .section-content > .home-nav, .title-section > .section-content > .instagram-link {
+    padding-right: 1rem;
+    display: inline-block;
+    align-self: flex-end;
+    flex-grow: 1;
 }
 
-
-
-
-
-/* || SDG SECTION */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr); /* 6 columns */
-    gap: 35px;
-    padding: 40px;
-}
-
-.sdg-button {
-    background-color: transparent; 
-    border: none; 
-    cursor: pointer;  
-    padding: 0; 
-}
-
-
-.sdg-button > a {
-    border: none;
-}
-
-.sdg-button img { 
-    margin: 2.5px;
-    border: none;
-    padding: 3rem;
-    height: auto; 
-    transition: transform 0.3s ease; /* smooth transition for click effect */
-}
-
-.sdg-button:active img {
-    transform: scale(0.9); /* slightly shrink image when clicked */
-}
-
-.grid-item {
-    text-align: center;
-    border-radius: 5px;
-}
-  
-.grid-container video {
-    position: absolute;
-    left: 0;
-    transform: translateY(-40px);
-    z-index: -2;
-}
-
-.grid-container > h2 {
-    position: relative;
-    display: inline;
-    left: 50vw;
-    background-color: rgb(var(--colour-bg));
-    border-radius: 3rem;
-    
-}
-
-
-
-
-
-
-
+/* adjust spacing for title-text inside container*/
+.title-section > .section-content > .title-text {
+    padding-right: 10%;
+    margin: 110px 0 110px 0;
+    flex-grow: 2;
+} 
 
