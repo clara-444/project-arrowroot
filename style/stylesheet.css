@@ -212,10 +212,6 @@ footer { padding: calc(var(--section-padding-spacing) / 3); }
     border-radius: var(--rounded-border-size) var(--rounded-border-size) 0 0;
 }
 
-.construction-section {
-    min-height: 80vh;
-}
-
 .under-construction {
     position: absolute;
     left: 50%;
