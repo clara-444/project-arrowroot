@@ -91,7 +91,7 @@ footer { padding: calc(var(--section-padding-spacing) / 3); }
     margin: 0;
     border: 0;
     width: 100%;   
-    min-height: 100vh;
+    min-height: 750px;
     text-align: center;
 }
 
@@ -212,6 +212,11 @@ footer { padding: calc(var(--section-padding-spacing) / 3); }
     border-radius: var(--rounded-border-size) var(--rounded-border-size) 0 0;
 }
 
+.title-section {
+    line-height: 0.9;
+    margin-bottom: 0;
+}
+
 .under-construction {
     position: absolute;
     left: 50%;
@@ -221,6 +226,16 @@ footer { padding: calc(var(--section-padding-spacing) / 3); }
     transform: translate(-50%, -50%);
     border: black 1px solid;
     border-radius: 30px;
+}
+
+.beige-footer-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--colour-beige);
+    z-index: -1;
 }
 
 
@@ -344,6 +359,7 @@ ul.dropdown-options li a {
 
 /* |||| MAIN FOOTER |||| */
 footer {
+    position: relative;
     background-color: var(--colour-brown);
     text-align: center;
     border-radius: 30px 30px 0 0;
@@ -361,12 +377,18 @@ footer {
     margin-bottom: var(--section-padding-spacing);
 }
 
+.main-footer > .footer-social-links {
+    text-align: right;
+}
+
 .main-footer > .footer-social-links > .colour-container {
     border-radius: var(--rounded-border-size);
     padding-top: 0;
     padding-bottom: 0;
     height: 50px;
 }
+
+
 
 .footer-links {
     display: flex;
@@ -401,6 +423,7 @@ footer {
 /* ||| TITLE SECTION ||| */ 
 .section.home-title { 
     position: relative; /* set to relative to allow for absolute positioning of child element (img) */
+    min-height: 500px;
     height: 100vh;
     /* align section-content to left edge */
     display: flex;
@@ -412,13 +435,13 @@ footer {
 .home-title > .img-container { 
     position: absolute;
     /* position to always be centered on left edge of section content */
-    top: calc(var(--section-padding-spacing) + 0.1 * var(--section-content-size) + 0.5 * 0.9 * var(--section-content-size)); /*add additional spacing to account for bottom alignment of section-content element*/
+    top: calc(var(--section-padding-spacing) + 0.1 * var(--section-content-size) + 0.49 * 0.9 * var(--section-content-size)); /*add additional spacing to account for bottom alignment of section-content element*/
     right: calc(var(--section-padding-spacing) + 7 / 10 * var(--section-content-size)); /*account for absolute reference point by calculating screen width - 2 padding-spacing */
     transform: translate(50%, -50%);
     /**/
     padding: calc(var(--element-spacing) * 3.5); 
-    height: calc(0.85 * (0.9 * var(--section-content-size))); 
-    width: calc(0.85 * (0.9 * (100vh - 2*var(--section-padding-spacing))));
+    height: calc(0.9 * (0.9 * var(--section-content-size))); 
+    width: calc(0.9 * (0.9 * (100vh - 2*var(--section-padding-spacing))));
     border-radius: 50%;
     background-color: var(--colour-green-3-transparent);
 }
@@ -426,7 +449,7 @@ footer {
 .home-title > .section-content {
     width: 70%; /*!!!CHECK*/
     height: 93%;
-    padding: 1rem; 
+    padding: 1.5rem; 
     padding-left: 15%;
     border-radius: var(--slight-rounded-border-size); 
     background-color: var(--colour-bg);
@@ -444,7 +467,7 @@ footer {
 /* style for home-nav */
 .home-title > .section-content > .home-nav button {
     border-radius: 50%;
-    padding: 5px; }
+    padding: 7.5px; }
 .home-title > .section-content > .home-nav .contained-img {
     margin: var(--element-spacing);
     width: 25px;
@@ -456,14 +479,14 @@ footer {
 /* style for title-text */
 .home-title > .section-content > .title-text {
     text-align: left;
-    margin: 0 15%; } 
+    margin-left: 30%;} 
 .title-text > h1 {
     font-size: 3rem;
     line-height: normal;
 }
 
-/* display image of globe only when screen width is 1300px*/
-@media (max-width: 1300px) { /*!!!ADD TRANSITION*/
+/* display image of globe only when screen width is 1090px*/
+@media (max-width: 950px) { /*!!!ADD TRANSITION*/
     .home-title > .section-content { 
         padding-left: 1rem;
     }
@@ -487,13 +510,20 @@ footer {
     background: radial-gradient(transparent , var(--colour-bg) 90%), linear-gradient(to right, var(--colour-orange-light) 40%, var(--colour-green-3) 50%);
 }
 
-.home1 > .centered-content-container > .flex-item {
-    width: min(50%, 290px);
+.home1 > .section-content > .flex-item {
+    width: min(50%, 240px);
     overflow: hidden;
 }
 
-.home1 > .section-content p {
-    border-radius: var(--rounded-border-size)
+.home1 > .section-content > .centered-content-container > .contained-img {
+    border-radius: 20px;
+    
+}
+
+.home1 > .section-content > .centered-content-container > .colour-container {
+    border-radius: var(--rounded-border-size);
+    min-height: 77px;
+    padding: 5%;
 }
 
 
@@ -502,10 +532,8 @@ footer {
 
 section.home2 {
     padding-top: calc(var(--vertical-line-height) + var(--arrow-height)); /* make space for vertical line & arrow positioning */
-    padding-bottom: 0; 
+    padding-bottom: calc(var(--vertical-line-height) * 1.5);
     background-color: var(--colour-beige); 
-    
-    background: linear-gradient(to bottom, transparent, var(--colour-beige) 30%), radial-gradient(transparent , var(--colour-bg) 90%), linear-gradient(to right, var(--colour-orange-light) 40%, var(--colour-green-3) 50%);
 }
 
 /* transform half the arrow line by 50% to overlap the previous home1 section */
@@ -523,48 +551,49 @@ section.home2 {
 
 .home2 > .section-content.left-align {
     flex-direction: row;
-    align-items: flex-start;
-}
-
+    align-items: flex-start; }
 .home2 > .section-content.right-align {
     flex-direction: row-reverse;
     align-items: flex-end;
 }
 
-.home2 > .section-content > div {
-    width: min(500px, 75%);
-    border: solid 1.5px black;
-    margin: calc(var(--element-spacing) * 3);
-    border-radius: 25px;
-    height: 170px;
-}
-
 .home2 > .section-content > .centered-content-container {
-    gap:calc(3 *  var(--element-spacing));
+    width: min(450px, 50%);
+    border: solid 1.5px black;
+    margin: var(--element-spacing) calc(var(--element-spacing) * 3);
+    border-radius: 25px;
+    min-height: 200px;
 }
 
-.home2 > .img-container { /* !!! ADD MEDIA QUERY FOR WHEN IMAGE OVERLAPS ELEMENTS: replace image with text */
+.home2-graphic {
+    position: relative;
+    width: 80%;
+}
+
+.home2 > .home2-graphic > .img-container { /* !!! ADD MEDIA QUERY FOR WHEN IMAGE OVERLAPS ELEMENTS: replace image with text */
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 78%;
-    transform: translateY(31%);
-    text-align: center;
+    top: 0;
+    width: 100%;
+    transform: translateY(-30%);
 }
 
-.home2 .section-title-rounded {
+.home2 > .home2-graphic > .section-title-rounded {
     display: none;
-    background-color: var(--colour-teal); /*!!!CHANGE*/
+    background-color: var(--colour-teal); /*!!!CHANGE?*/
 }
 
-@media (max-width: 1202px) {
-    .home2 > .img-container {
+@media (max-width: 1280px) {
+    section.home2 { 
+        padding-bottom: 0;
+    }
+    .home2 > .home2-graphic > .img-container {
         display: none;
     }
-    .home2 .section-title-rounded {
+    .home2 > .home2-graphic > .section-title-rounded  {
         display: inline-block;
     }
 }
+
 
 
 
@@ -580,6 +609,7 @@ section.home2 {
 .sdg > .section-content > .flex-item {
     width: 160px;
     margin: var(--element-spacing);
+    flex: 0 0 13%;
 }
 
 .sdg > .section-content > a.flex-item:hover {
@@ -605,8 +635,8 @@ section.home2 {
     width: 250px;
     height: 75px;
     border-radius: 40px;
+    font-size: 1.5rem;
 }
-
 
 
 
