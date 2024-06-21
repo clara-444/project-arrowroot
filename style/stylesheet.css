@@ -575,7 +575,7 @@ section.home2 {
     top: 0;
     left: 0;
     width: 120%;
-    transform: translate(-17%, -12%);
+    transform: translate(-17%, -17%);
     
 }
 
@@ -615,7 +615,7 @@ section.home2 {
 .sdg > .section-content > .flex-item {
     width: 160px;
     margin: var(--element-spacing);
-    flex: 0 0 13%;
+
 }
 
 .sdg > .section-content > a.flex-item:hover {
@@ -628,6 +628,11 @@ section.home2 {
     width: 40%;
 }
 
+@media (min-width: 1000px) {
+    .sdg > .section-content > .flex-item {
+      flex-basis: 14%; /* 1/3rd of the container's width */
+    }
+}
 
 
 /* ||| HOME SECTION 3 ||| */ 
