@@ -532,7 +532,7 @@ footer {
 
 section.home2 {
     padding-top: calc(var(--vertical-line-height) + var(--arrow-height)); /* make space for vertical line & arrow positioning */
-    padding-bottom: calc(var(--vertical-line-height) * 1.5);
+    padding-bottom: calc(var(--vertical-line-height) * 2.5);
     background-color: var(--colour-beige); 
 }
 
@@ -573,8 +573,10 @@ section.home2 {
 .home2 > .home2-graphic > .img-container { /* !!! ADD MEDIA QUERY FOR WHEN IMAGE OVERLAPS ELEMENTS: replace image with text */
     position: absolute;
     top: 0;
-    width: 100%;
-    transform: translateY(-30%);
+    left: 0;
+    width: 120%;
+    transform: translate(-17%, -12%);
+    
 }
 
 .home2 > .home2-graphic > .section-title-rounded {
@@ -600,6 +602,10 @@ section.home2 {
 /* ||| SDG SECTION ||| */ 
 .sdg {
     padding-bottom: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .sdg > .section-content {
@@ -619,6 +625,7 @@ section.home2 {
 .sdg > .section-title-rounded {
     background-color: var(--colour-bg);
     color: var(--colour-lightened-text);
+    width: 40%;
 }
 
 
