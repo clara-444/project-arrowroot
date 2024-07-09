@@ -512,7 +512,6 @@ footer  .logo {
 
 .section.home-title { 
     position: relative; /* set to relative to allow for absolute positioning of child element (img) */
-    min-height: 500px;
     height: 100vh;
     /* align section-content to left edge */
     display: flex;
@@ -539,7 +538,7 @@ footer  .logo {
 .home-title > .section-content {
     position: relative; /* allows for abs pos of home-title-graphic*/
     width: 70%;
-    height: 93%;
+    height: max(590px, 93%);
     padding: 1.5rem; 
     padding-left: 15%;
     border-radius: var(--slight-rounded-border-size); 
@@ -772,8 +771,8 @@ section.home2 {
     border: 1px solid black;
     border-bottom: none;
     background-color: var(--colour-bg);
-    color: var(--colour-lightened-text);
     min-width: 40%;      
+    line-height: 1.1;
 }
 
 .sdg > .sdg-title-text {
@@ -786,7 +785,7 @@ section.home2 {
 
 .sdg > .sdg-page-text-rounded {
     padding: 0.5rem 5rem 0 5rem;
-    font-size: 1.9rem;
+    font-size: 1.8rem;
 }
 
 @media (max-width: 1200px) {
@@ -990,7 +989,8 @@ section.home2 {
 }
 
 .mentorship-logo {
-    width: 130px;
+    margin-top: calc(var(--element-spacing) * 3);
+    max-height: 90px;
 }
 
 
@@ -1390,7 +1390,7 @@ section.home2 {
     position: absolute;
     z-index: 5;
     left: 50%;
-    top: 50%;
+    top: 50%; 
 }
 
 .sdg-pages > .sdg-page > p {
@@ -1401,13 +1401,13 @@ section.home2 {
 
 .sdg-pages > .sdg-page > button {
     background-color: transparent;
-    transform: translate(-50%, 110%);
+    transform: translate(-50%, 140%);
     width: 17%;
-    height: 8%;
+    height: 7%;
 }
 
 .sdg-pages > .sdg-page > button:hover {
-    background-color: var(--colour-green-3-transparent);
+    background-color: rgba(128, 128, 128, 0.277);
 }
 
 /* sdg extra page */
@@ -1469,6 +1469,60 @@ section.home2 {
         font-size: 50%;
     }
 }
-/* ||| any new classes ||| */
 
+
+
+/* |||| MEET OUR TEAM PAGE |||| */
+.section.meet-our-team-title {
+    min-height: 100vh;
+}
+.meet-our-team-title > .section-content > * {
+    display: block; /* override flex to ensure elements are on seperate lines */
+}
+
+/* ||| MISSION 1 ||| */ 
+.section.meet-our-team-1 {
+    background-color: var(--colour-green-1);
+}
+
+.meet-our-team-1 > .section-content {
+    padding-top: var(--section-padding-spacing);
+    padding-bottom: calc(var(--section-padding-spacing) * 0.5);
+    width: 1300px; /* perfectly fits 3 namecards + gap to help center section-content element */
+    justify-content: flex-start;
+    gap: calc(var(--element-spacing) * 6);
+}
+
+.meet-our-team-1 > .section-content > div > img {
+    width: 411px;
+}
+
+/* set absolute positioning for namecard text & linkedin button */
+.meet-our-team-1 > .section-content > div {
+    position: relative;
+}
+.meet-our-team-1 > .section-content > div > b, .meet-our-team-1 > .section-content > div > p, .meet-our-team-1 > .section-content > div > button {
+    position: absolute;
+    left: 31.5%;    }
+
+/* namecard text & linkedin buttons positioning */
+.meet-our-team-1 > .section-content > div > b { top: 68.5%;   }
+.meet-our-team-1 > .section-content > div > p { top: calc(68.5% + 1.3rem);    }
+.meet-our-team-1 > .section-content > div > button {
+    width: 9%;
+    height: 8%;
+    left: 86%;
+    top: 74.5%;
+}
+
+/* style for 1 line of text on namecard */
+.meet-our-team-1 > .section-content > div > b.meet-our-team-1-centered-element {
+    top: 71%;
+}
+
+@media (max-width: 1290px) {
+    .meet-our-team-1 > .section-content {
+        justify-content: center;
+    }
+}
 
