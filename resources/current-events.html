@@ -3,12 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>About</title>
+        <title>Current Events</title>
         <meta name="description" content="Project Arrowroot Current Events">
         <meta property="og:title" content="Project Arrowroot Current Events">
         <meta property="og:description" content="!!!">
         <meta property="og:image" content="Logo">
-        <meta property="og:image:alt" content="!!!">
+        <meta property="og:image:alt" content="!!!">  
         
         <link rel="stylesheet" href="../style/stylesheet.css" type="text/css" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,18 +66,92 @@
         </header>
     
     <main>
-        <section class="section beige construction-section">
-            <div class="flex-centered blue1 under-construction"> 
-                <h3>more coming soon!</h3>
-                <p>we’re still under construction, thank you for your patience :)</p>
+        <section class="section current-events-title flex-centered">
+            <video class="bg-media" autoplay muted loop> <!--add alt/aria text!!! -->
+                <source src="..\assets\media\current-events.mp4" type="video/mp4">
+            </video>
+            <div class="section-content white-title-text">
+                <h1>current events</h1>
+                <p>happening in your community and beyond</p>
             </div>
+        </section>
+
+        <section class="section current-events-1">
+            <h2>temperature check: how do you feel about the climate?</h2>
+            <div class="section-content flex-wrapped-container">
+                <div class="sub-section-content">
+                    <img src="..\assets\images\webpage-graphic\abstract-painting-climate-anxiety.png" alt="abstract painting of the sky">
+                    <h3 class="lightened-text">climate anxiety</h3>
+                    <p class="lightened-text">FUTURE-FACING</p>
+                    <p>fear, stress, or worry stemming from a sense of impending climate change impacts and processes; a sense of threat & uncertainty about environmental doom. can be mental, emotional, physical</p>
+                </div>
+                <div class="sub-section-content">
+                    <img src="..\assets\images\webpage-graphic\abstract-painting-eco-grief.png" alt="abstract painting">
+                    <h3 class="lightened-text">eco-grief</h3>
+                    <p class="lightened-text">MOURNING</p>
+                    <p>grief from experienced or anticipated ecological losses, including the loss of species, ecosystems and meaningful landscapes due to acute or chronic environmental change</p>
+                </div>
+                <div class="sub-section-content">
+                    <img src="..\assets\images\webpage-graphic\abstract-painting-solastalgia.png" alt="image of starry night">
+                    <h3 class="lightened-text">solastalgia</h3>
+                    <p class="lightened-text">IN-THE-PROCESS</p>
+                    <p>distress that is produced by negatively perceived environmental change impacting on people while they are directly connected to their home environment</p>
+                </div>
+                <div class="sub-section-content">
+                    <img src="..\assets\images\webpage-graphic\abstract-painting-climate-hope.png" alt="image of space">
+                    <h3 class="lightened-text">climate hope</h3>
+                    <p class="lightened-text">PERSEVERING</p>
+                    <p>the acknowledgement of the climate crisis, and the simultaneous focus on the power of collective action to create a sustainable future; the unyielding investment in individual and community agency to make a difference</p>
+                </div>
+            </div>
+            
+            <div class="blue10 flex-centered"> 
+                <p>Did you know?  In a <u>research project</u> surveying 1,000 young people aged 16-25 years in Canada, 78% of youth expressed that climate change affects their overall mental health. 37% reported that their feelings about climate change negatively impacted daily functioning.</p>
+            </div>
+        </section>
+
+        <section class="section current-events-2"> 
+            <img class="bg-media" src="..\assets\images\background\mini-green-browser.png" alt="background image of green browser">
+            <img class="bg-media-graphic" src="..\assets\images\webpage-graphic\close-browser-icon.png" alt="close icon for background image of green browser ">
+            <div class="section-title-rounded-inverse">
+                <h2>stay up to date:</h2>
+            </div>
+            <div class="section-content flex-wrapped-container">
+                <div class="sub-section-content">
+                    <img src="..\assets\images\webpage-graphic\save-icon-butterfly.png" alt="butterfly save icon">
+                    <button class="flex-centered shadow-on-hover" onclick="location.href = '../about.html'">
+                        <p>in my community</p>
+                        <div class="horizontal-line"></div>
+                        <div class="right-arrow"></div>
+                    </button>
+                </div>
+                <div class="sub-section-content">
+                    <img src="..\assets\images\webpage-graphic\save-icon-earth.png" alt="earth save icon">
+                    <button class="flex-centered shadow-on-hover" onclick="location.href = '../about.html'">
+                        <p>global village</p>
+                        <div class="horizontal-line"></div>
+                        <div class="right-arrow"></div>
+                    </button>
+                </div>
+                <div class="sub-section-content">
+                    <img src="..\assets\images\webpage-graphic\save-icon-saturn.png" alt="saturn save icon">
+                    <button class="flex-centered shadow-on-hover" onclick="location.href = '../about.html'">
+                        <p>add event/news</p>
+                        <div class="horizontal-line"></div>
+                        <div class="right-arrow"></div>
+                    </button>
+                </div>
+            </div>
+
+            <img class="current-events-2-graphic-1" src="..\assets\images\webpage-graphic\icons-column-1.png" alt="group of icon graphics in a column">
+            <img class="current-events-2-graphic-2" src="..\assets\images\webpage-graphic\icons-column-2.png" alt="group of icon graphics in a column">
         </section>
     </main>
 
     <footer>
-        <div class="footer-bg beige"></div>
+        <div class="footer-bg white-black-gradient"></div>
         <div class="main-footer">
-            <button class="logo shadow-on-hover" onclick="location.href='index.html'">
+            <button class="logo shadow-on-hover" onclick="location.href='../index.html'">
                 <img src="..\assets\images\logo\project-arrowroot-bird-logo.png" alt="Project Arrowroot - Bird Logo">
                 <h2>PROJECT ARROWROOT</h2>
             </button>
