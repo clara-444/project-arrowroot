@@ -774,6 +774,7 @@ footer  .logo {
     }
     .section.home2 {
         padding-bottom: 0;
+        min-height: fit-content;
     }
     .home2-graphic { /*replace graphic with text */
         display: inline-block;
@@ -786,24 +787,29 @@ footer  .logo {
         transform: translate(-5%, -68%);
     }
 }
-@media (max-width: 1688px) and (min-width: 1577px) { 
+@media (max-width: 1688px) and (min-width: 1555px) { 
     .sdg > .sdg-graphic { 
         transform: translate(-10%, -68%); 
     }
 }
-@media (max-width: 1577px) and (min-width: 1515px) { 
+@media (max-width: 1555px) and (min-width: 1492px) { 
     .sdg > .sdg-graphic { 
         transform: translate(3%, -68%) scale(1.06); 
     }
 }
-@media (max-width: 1340px) and (min-width: 1273px) {
+@media (max-width: 1340px) and (min-width: 1278.69px) {
     .sdg > .sdg-graphic { 
         transform: translate(-6%, -68%);
     }
 }
-@media (max-width: 1273px) and (min-width: 1170px) { 
+@media (max-width: 1278.69px) and (min-width: 1264px) { 
     .sdg > .sdg-graphic { 
-        transform: translateY(-65%);
+        transform: translate(1%, -68%) scale(1.02);
+    }
+}
+@media (max-width: 1264px) and (min-width: 1170px) { 
+    .sdg > .sdg-graphic { 
+        transform: translateY(-63%), scale(1.01);
     }
 }
 
