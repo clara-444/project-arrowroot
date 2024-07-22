@@ -39,14 +39,13 @@
                     <li class="dropdown-toggle">
                         <p class="shadow-on-hover">resources</p>
                         <ul class="dropdown-options">
-                            <li><a href="..\resources\SDG-career.html" class="shadow-on-hover">SDG career </a></li>
-                            <li><a href="..\resources\navigator.html" class="shadow-on-hover">navigator</a></li>
+                            <li><a href="..\resources\SDG-career.html" class="shadow-on-hover">SDG career navigator</a></li>
                             <li><a href="..\resources\current-events.html" class="shadow-on-hover">current events</a></li>
                         </ul>
                     </li>
                     
                     <li class="dropdown-toggle">
-                        <a href="..\about.html" class="shadow-on-hover">about</a>
+                        <p class="shadow-on-hover">about</p>
                         <ul class="dropdown-options">
                             <li><a href="..\about\mission.html" class="shadow-on-hover">mission</a></li>
                             <li><a href="..\about\meet-our-team.html" class="shadow-on-hover">meet our team</a></li>
@@ -66,7 +65,26 @@
         </header>
     
     <main>
-        <section class="section beige construction-section">
+        <section class="section mentor-title flex-centered">
+            <video class="bg-media" autoplay muted loop> <!--add alt/aria text!!! -->
+                <source src="..\assets\media\mentor.mp4" type="video/mp4">
+            </video>
+            <div class="section-content white-title-text">
+                <h1>mentor</h1>
+                <p>practice intergenerational teaching</p>
+            </div>
+        </section>
+        
+        <section class="section mentor-1 beige flex-centered">
+            <div class="section-content">
+                <img src="..\assets\images\webpage-graphic\mini-green-browser.png" alt="Green mini browser">
+                <img class="mentor-1-graphic" src="../assets\images\logo\caution-logo.png" alt="Caution icon">
+                <p>want to become a mentor?</p>
+                <button onclick="location.href='https://forms.gle/geGnLj2hUhgEoGWG9'"></button>
+            </div>
+        </section>
+
+        <section class="section beige construction-section mentor-2">
             <div class="flex-centered blue1 under-construction"> 
                 <h3>more coming soon!</h3>
                 <p>we’re still under construction, thank you for your patience :)</p>
@@ -77,7 +95,7 @@
     <footer>
         <div class="footer-bg beige"></div>
         <div class="main-footer">
-            <button class="logo shadow-on-hover" onclick="location.href='index.html'">
+            <button class="logo shadow-on-hover" onclick="location.href='../index.html'">
                 <img src="..\assets\images\logo\project-arrowroot-bird-logo.png" alt="Project Arrowroot - Bird Logo">
                 <h2>PROJECT ARROWROOT</h2>
             </button>
@@ -95,7 +113,6 @@
                     <h4>Resources</h4>
                     <ul>
                         <li><a href="..\resources\SDG-career.html">SDG Career Navigator</a></li>
-                        <li><a href="..\resources\navigator.html">Navigator</a></li>
                         <li><a href="..\resources\current-events.html">Current Events</a></li>
                     </ul>
                 </div>

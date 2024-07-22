@@ -263,6 +263,10 @@ footer { padding: calc(var(--section-padding-spacing) / 3); }
 
 /* |||| ADDITIONAL CLASSES (Temp + Footer) |||| */
 
+.lightened-text {
+    color: var(--colour-lightened-text-2);
+}
+
 /* display a black line underneath element */
 .bottom-border {
     margin: auto;
@@ -465,7 +469,7 @@ footer {
 
 .main-footer {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row wrap; 
     justify-content: space-between;
     align-items: flex-start;
 }
@@ -528,34 +532,18 @@ footer  .logo {
 }
 
 .section.home-title { 
-    position: relative; /* set to relative to allow for absolute positioning of child element (img) */
-    height: 100vh;
+    position: relative; 
+    height: 860px;
     /* align section-content to left edge */
     display: flex;
     justify-content: right;
     align-items: end;
 }
 
-/* image of globe */
-.home-title > .img-container { 
-    position: absolute;
-    /* position to always be centered on left edge of section content */
-    top: calc(var(--section-padding-spacing) + 0.1 * var(--section-content-size) + 0.49 * 0.9 * var(--section-content-size)); /*add additional spacing to account for bottom alignment of section-content element*/
-    right: calc(var(--section-padding-spacing) + 7 / 10 * var(--section-content-size)); /*account for absolute reference point by calculating screen width - 2 padding-spacing */
-    transform: translate(50%, -50%);
-    /**/
-    padding: calc(var(--element-spacing) * 3.5); 
-    height: calc(0.9 * (0.9 * var(--section-content-size))); 
-    width: calc(0.9 * (0.9 * (100vh - 2*var(--section-padding-spacing))));
-    border-radius: 50%;
-    background-color: var(--colour-green-3-transparent);
-    z-index: 5;
-}
-
 .home-title > .section-content {
-    position: relative; /* allows for abs pos of home-title-graphic*/
-    width: 70%;
-    height: max(590px, 93%);
+    position: relative; /* allows for abs pos of globe & home-title-graphic*/
+    width: min(70%, 1150px);
+    height: 650px;
     padding: 1.5rem; 
     padding-left: 15%;
     border-radius: var(--slight-rounded-border-size); 
@@ -565,6 +553,24 @@ footer  .logo {
     flex-flow: column nowrap;
     overflow: hidden;
     justify-content: space-between;
+    overflow: visible;
+}
+
+/* style globe !!!*/ 
+.home-title > .section-content > .img-container {
+    position: absolute;
+    left: 0;
+    top: 6.5%;
+    height: 565px; /*87% of section content height*/
+    width: 565px; /* equal to height*/
+    border-radius: 50%;
+    background-color: var(--colour-green-3-transparent);
+    transform: translateX(-50%);
+    z-index: 5;
+}
+.home-title > .section-content > .img-container > img {
+    padding-top: 4%;
+    height: 96%;
 }
 
 .home-title .home-nav, .home-title .instagram-link {
@@ -586,7 +592,7 @@ footer  .logo {
 /* style for title text */
 .home-title > .section-content > .home-title-text {
     text-align: left;
-    margin-left: calc((0.9 * (0.9 * (100vh - 2*var(--section-padding-spacing)))) / 4.5); /* make margin-left a calculation of half the globe !!! check why division by 4 not 2*/
+    margin-left: 140px;
     width: 420px;} 
 .home-title-text > h1 {
     line-height: normal;
@@ -610,29 +616,20 @@ footer  .logo {
 
 }
 
-/* reduce spacing between text and globe at certain widths */
-@media (max-width: 1400px) {
+/* reduce spacing between text and globe */
+@media (max-width: 1200px) {
     .home-title > .section-content > .home-title-text {
-        margin-left: calc((1 * (0.95 * (100vh - 2*var(--section-padding-spacing)))) / 4);
-    }
-    .home-title > .img-container { 
-        width: calc(0.9 * (0.9 * (100vh - 2*var(--section-padding-spacing))));
-        height: calc(0.9 * (0.9 * var(--section-content-size))); 
-    }
- }
-@media (max-width: 1190px) {
-    .home-title > .section-content > .home-title-text {
-        margin-left: calc((0.9 * (0.9 * (100vh - 2*var(--section-padding-spacing)))) / 3);
+        margin-left: 200px;
         width: auto; /* title-text wraps when reaching maximum width*/ 
     }
 }
 
-/* display image of globe only when screen width is 1090px*/
-@media (max-width: 1050px) { /*!!!ADD TRANSITION*/
+/* remove display of globe image at smaller widths*/
+@media (max-width: 1050px) { 
     .home-title > .section-content { 
-        padding-left: 1rem;
+        padding-left: 0;
     }
-    .home-title > .img-container {
+    .home-title > .section-content > .img-container {
         display: none; 
     }
     .home-title > .section-content > .home-title-text {
@@ -642,16 +639,13 @@ footer  .logo {
     } 
 }
 
-@media (max-height: 745px) {
-    .home-title > .img-container {
-        display: none; 
-    }
-}
-
-/* left align arrow graphic to prevent overlapping of elements */
+/* left align arrow graphic to prevent overlapping of elements at smaller widths*/
 @media (max-width: 700px) {
     .home-title > .section-content > .home-title-graphic {
-        left: 25%;
+        left: 40%;
+    }
+    .home-title > .section-content {
+        width: 95%;
     }
 }
 
@@ -663,7 +657,13 @@ footer  .logo {
     padding-top: var(--vertical-line-height-1); 
     padding-bottom: calc(var(--vertical-line-height-1) * 1.1) ;
     /**/
+    display: block;
     background: radial-gradient(transparent , var(--colour-bg) 90%), linear-gradient(to right, var(--colour-orange-light) 40%, var(--colour-green-3) 50%);
+}
+
+.home1 > .section-content {
+    width: min(1270px, 95%);
+    margin: auto;
 }
 
 .home1 > .section-content > .flex-item {
@@ -671,12 +671,12 @@ footer  .logo {
     overflow: hidden;
 }
 
-.home1 > .section-content > .flex-wrapped-container > .contained-img {
+.home1 > .section-content > .flex-item > .contained-img {
+    width: 100%;
     border-radius: 20px;
-    
 }
 
-.home1 > .section-content > .flex-wrapped-container > .flex-centered {
+.home1 > .section-content > .flex-item > p {
     border-radius: var(--rounded-border-size);
     min-height: 77px;
     padding: 5%;
@@ -686,10 +686,11 @@ footer  .logo {
 
 /* ||| HOME SECTION 2 ||| */ 
 
-section.home2 {
+.section.home2 {
     padding-top: calc(var(--vertical-line-height-1) + var(--arrow-height)); /* make space for vertical line & arrow positioning */
-    padding-bottom: calc(var(--vertical-line-height-1) * 2.5);
+    padding-bottom: calc(var(--vertical-line-height-1) * 2.5); /*make space for sdg-graphic */
     background-color: var(--colour-beige); 
+    display: block;
 }
 
 /* transform half the arrow line by 50% to overlap the previous home1 section */
@@ -703,12 +704,15 @@ section.home2 {
 .home2 > .section-content {
     display: flex;
     flex-flow: column wrap;
+    margin: auto;
+    width: min(1100px, 100%);
 }
 
 .home2 > .section-content.home2-left-align {
     flex-direction: row;
     align-items: flex-start; }
 .home2 > .section-content.home2-right-align {
+    margin-top: 1rem;
     flex-direction: row-reverse;
     align-items: flex-end;
 }
@@ -723,9 +727,23 @@ section.home2 {
     gap: var(--element-spacing);
 }
 
-@media (max-width: 1085px) {
+.home2 > .section-content h3 {
+    color: var(--colour-lightened-text-2)
+}
+
+@media (max-width: 1090px) {
     .home2 > .section-content > * {
         width: 70%;
+    }
+    .home2 > .section-content.home2-left-align, .home2 > .section-content.home2-right-align {
+        margin-top: 0;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 680px) {
+    .home2 > .section-content > * {
+        width: 100%;
     }
 }
 
@@ -738,32 +756,59 @@ section.home2 {
 
 .sdg > .sdg-graphic { 
     position: absolute;
-    width: 80%;
+    width: 1149px;
     top: 0;
-    left: 0;
-    transform: translate(-2%, -74%);
+    left: 0px;
+    transform: translateY(-68%);
 }
 
-/* change positioning of sdg-graphic to stay aligned to SDG button 3 when sdg buttons wraps*/
-@media (max-width: 1151px) {
-    .sdg > .sdg-graphic {  
-        width: 95%;
-        transform: translateY(-72%);
-    }
-}
-
-/*sdg-graphic dissapears and is replaced with text when screen width is minimized */
-@media (max-width: 1000px) {
-    .home2 > .home2-graphic {
-        display: block;
-    }
-    section.home2 {
-        padding-bottom: 0;
-    }
+/* remove display at very large and very small widths */
+@media (min-width: 1930px) { 
     .sdg > .sdg-graphic {  
         display: none;
     }
 }
+@media (max-width: 1170px) { 
+    .sdg > .sdg-graphic {  
+        display: none;
+    }
+    .section.home2 {
+        padding-bottom: 0;
+    }
+    .home2-graphic { /*replace graphic with text */
+        display: inline-block;
+    }
+}
+
+/* change positioning of hands graphic to always be directly above a button */
+@media (max-width: 1800px) and (min-width: 1688px) {
+    .sdg > .sdg-graphic { 
+        transform: translate(-5%, -68%);
+    }
+}
+@media (max-width: 1688px) and (min-width: 1577px) { 
+    .sdg > .sdg-graphic { 
+        transform: translate(-10%, -68%); 
+    }
+}
+@media (max-width: 1577px) and (min-width: 1515px) { 
+    .sdg > .sdg-graphic { 
+        transform: translate(3%, -68%) scale(1.06); 
+    }
+}
+@media (max-width: 1340px) and (min-width: 1273px) {
+    .sdg > .sdg-graphic { 
+        transform: translate(-6%, -68%);
+    }
+}
+@media (max-width: 1273px) and (min-width: 1170px) { 
+    .sdg > .sdg-graphic { 
+        transform: translateY(-65%);
+    }
+}
+
+
+
 
 
 /* ||| SDG SECTION ||| */ 
@@ -776,20 +821,27 @@ section.home2 {
     justify-content: space-between;
 }
 
+/* SDG buttons */
 .sdg > .section-content {
     margin-top: 35px;
+    width: min(100%, 1300px);
+    gap: 1.2rem;
 }
 
 .sdg > .section-content > .flex-item {
-    width: 160px;
     margin: var(--element-spacing);
     z-index: 5;
 }
 
-.sdg > .section-content > a.flex-item:hover {
-    transform: scale(1.05);
+.sdg > .section-content > .flex-item > img:hover {
+    transform: scale(1.07);
 }
 
+.sdg > .section-content > .flex-item > img {
+    width: 170px;
+}
+
+/* text elements with rounded border */
 .sdg > .section-title-rounded {
     border: 1px solid black;
     border-bottom: none;
@@ -828,11 +880,15 @@ section.home2 {
 
 /* ||| HOME SECTION 3 ||| */ 
 .home3 {
-    
     padding-bottom: calc(2 * (var(--large-circular-element-size)/2));
     text-align: center;
     min-height: calc(3.2 * (0.5 * var(--large-circular-element-size)) + (80vw - 2*var(--section-padding-spacing)) / 2.97);
     line-height: 1;
+}
+
+.home3 > .section-content {
+    width: min(1200px, 100%);
+    margin: auto;
 }
 
 .home3 > .section-content > * {
@@ -867,14 +923,15 @@ section.home2 {
 .home4 > .contained-img {
     position: absolute;
     left: 0;
-    z-index: -10;
+    z-index: -10;;
 }
 
 .home4 > .home4-graphic {
     position: absolute;
-    top: calc(3.2 * (var(--large-circular-element-size) / 2)); /* position to always be underneath button*/
-    left: 10%;
-    width: 80%;
+    bottom: -9%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(80%, 1200px);
 }
 
 
@@ -1021,10 +1078,16 @@ section.home2 {
     column-gap: 200px; /* temporary before more logos are added */
 }
 
-.partner-logo {
-    margin-top: calc(var(--element-spacing) * 3);
+.partner-logo-1 {
+    margin-top: calc(var(--element-spacing) * 5);
     object-fit: contain;
     max-height: 100px;
+}
+
+.partner-logo-2 {
+    margin-top: calc(var(--element-spacing) * 9);
+    object-fit: contain;
+    max-height: 60px;
 }
 
 
@@ -1250,7 +1313,7 @@ section.home2 {
     min-height: max-content;
     padding: 70px 0 70px 0;
     background-color: var(--colour-bg);
-    color: var(--colour-lightened-text);
+    color: #4B494A;
 }
 
 .mission-1 > .section-content {
@@ -1267,6 +1330,10 @@ section.home2 {
     position: relative;
 }
 
+.mission-1 > .section-content > p {
+    color: black;
+}
+
 /* format graphics on both sides of div */
 .mission-1 > .section-content > img {
     position: absolute;
@@ -1275,7 +1342,7 @@ section.home2 {
 }
 .mission-1-graphic-1 {
     left: 0;
-    transform: translate(-100%, -50%);
+    transform: translate(-100.5%, -50%);
     z-index: 0;
 }
 .mission-1-graphic-2 {
@@ -1477,6 +1544,22 @@ section.home2 {
     text-decoration: underline;
 }
 
+
+/*change text size as parent elements scale down with screen width*/
+/*larger*/
+@media (min-width: 1585px) {
+    .sdg-pages > .sdg-page > p { 
+        font-size: 85%;
+    }
+}
+
+@media (min-width: 1800px) {
+    .sdg-pages > .sdg-page > p { 
+        font-size: 100%;
+    }
+}
+
+/*smaller*/
 @media (max-width: 1189px) {
     .section.sdg-pages {
         display: block;
@@ -1525,15 +1608,16 @@ section.home2 {
 }
 
 .meet-our-team-1 > .section-content {
-    padding-top: var(--section-padding-spacing);
+    margin: auto;
+    padding-top: calc(var(--section-padding-spacing) * 0.5);
     padding-bottom: calc(var(--section-padding-spacing) * 0.5);
-    width: 1265px; /* perfectly fits 3 namecards + gap to help center section-content element */
+    width: 1194px; /* perfectly fits 3 namecards + gap to help center section-content element */
     justify-content: flex-start;
-    gap: calc(var(--element-spacing) * 6);
+    gap: calc(var(--element-spacing) * 5);
 }
 
 .meet-our-team-1 > .section-content > div > img {
-    width: 400px;
+    width: 380px;
 }
 
 /* set absolute positioning for namecard text & linkedin button */
@@ -1542,11 +1626,11 @@ section.home2 {
 }
 .meet-our-team-1 > .section-content > div > b, .meet-our-team-1 > .section-content > div > p, .meet-our-team-1 > .section-content > div > button {
     position: absolute;
-    left: 31.5%;    }
+    left: 31%;    }
 
 /* namecard text & linkedin buttons positioning */
-.meet-our-team-1 > .section-content > div > b { top: 68.5%;   }
-.meet-our-team-1 > .section-content > div > p { top: calc(68.5% + 1.3rem);    }
+.meet-our-team-1 > .section-content > div > b { top: 68.1%;   }
+.meet-our-team-1 > .section-content > div > p { top: calc(68.1% + 1.3rem);    }
 .meet-our-team-1 > .section-content > div > button {
     width: 9%;
     height: 8%;
@@ -1559,9 +1643,15 @@ section.home2 {
     top: 71%;
 }
 
-@media (max-width: 1290px) {
+@media (max-width: 1245px) { 
     .meet-our-team-1 > .section-content {
-        justify-content: center;
+        width: 787px;
+    }
+}
+
+@media (max-width: 836px) {
+    .meet-our-team-1 > .section-content {
+        width: 380px;
     }
 }
 
@@ -1582,19 +1672,25 @@ section.home2 {
     background-color: var(--colour-blue-10);
     min-height: min-content;
     padding: calc(var(--section-padding-spacing) * (1/2)) var(--section-padding-spacing);
+    padding-bottom: calc(var(--section-padding-spacing) * (1/4));
     line-height: 1;
 }
 
 .stories-partnerships-1 > .section-content {
     justify-content: center;
-    column-gap: 200px; /* temporary before more logos are added */
+    column-gap: 2.5rem; 
     margin-bottom: 2rem;
+}
+
+/* ||| STORIES & PARTNERSHIPS 2 ||| */ 
+.stories-partnerships-2 {
+    min-height: 270px;
+    background-color: var(--colour-blue-10);
 }
 
 
 
-
-/* |||| CURRENT EVENTS |||| */
+/* |||| CURRENT EVENTS PAGE |||| */
 .section.current-events-title {
     min-height: 100vh;
 }
@@ -1769,6 +1865,89 @@ section.home2 {
 }
 
 
-.lightened-text {
+
+
+
+/* |||| SPONSOR PAGE |||| */
+.section.sponsor-title {
+    min-height: 100vh;
+}
+.sponsor-title > .section-content > * {
+    display: block; /* override flex to ensure elements are on seperate lines */
+}
+
+/* ||| SPONSOR 1 ||| (same as stories & partnerships 1 page)*/
+.section.stories-partnerships-1.sponsor-1 {
+    background-color: var(--colour-bg);
+}
+
+/* ||| SPONSOR 2 ||| */ 
+.sponsor-2 {
+    display: none;
+}
+.sponsor-2 > .section-content > .sub-section-content {
+    width: 280px;
+    margin-top: 2rem;
+}
+
+.sponsor-2 > .section-content > .sub-section-content > * {
+    display: block;
+}
+.sponsor-2 > .section-content > .sub-section-content > img {
+    height: 90px;
+    margin: auto;
+    margin-bottom: 0.75rem;
+}
+.sponsor-2 > .section-content > .sub-section-content > h3 {
+    font-style: normal;
     color: var(--colour-lightened-text-2);
+    margin-bottom: 0.5rem;
+}
+
+/* |||| MENTOR PAGE |||| */
+.section.mentor-title {
+    min-height: 100vh;
+}
+.mentor-title > .section-content > * {
+    display: block; /* override flex to ensure elements are on seperate lines */
+}
+/* ||| MENTOR 1 ||| */ 
+.section.mentor-1 {
+    min-height: 400px;
+}
+
+.mentor-1 > .section-content {
+    position: relative;
+    width: 500px;
+}
+.mentor-1 > .section-content > img {
+    width: inherit;
+}
+
+/* set child elements to absolute positioning*/
+.mentor-1 > .section-content > .mentor-1-graphic, .mentor-1 > .section-content > p, .mentor-1 > .section-content > button { 
+    position: absolute;
+    top: 30%;
+}
+.mentor-1 > .section-content > .mentor-1-graphic {
+    width: 10%;
+    left: 9%;
+}
+.mentor-1 > .section-content > p {
+    left: 22%;
+    transform: translateY(15%);
+    font-size: 1.5rem;
+}
+
+.mentor-1 > .section-content > button {
+    top: 57.5%;
+    left: 26.5%;
+    width: 46.5%;
+    height: 58px;
+}
+
+/* ||| MENTOR 2 ||| */ 
+.section.mentor-2 {
+    min-height: 300px;
+    padding-top: 0;
 }
