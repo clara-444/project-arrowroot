@@ -9,6 +9,42 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// nav menu buttons
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(event) {
+            event.stopPropagation(); // Prevent the click from bubbling up
+
+            // Close all other dropdowns
+            dropdownToggles.forEach(otherToggle => {
+                if (otherToggle !== toggle) {
+                    const otherDropdownOptions = otherToggle.querySelector('.dropdown-options');
+                    otherDropdownOptions.style.display = 'none';
+                }
+            });
+
+            // Toggle the clicked dropdown
+            const dropdownOptions = this.querySelector('.dropdown-options');
+            const isVisible = dropdownOptions.style.display === 'flex';
+            dropdownOptions.style.display = isVisible ? 'none' : 'flex';
+        });
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.dropdown-toggle')) {
+            dropdownToggles.forEach(toggle => {
+                const dropdownOptions = toggle.querySelector('.dropdown-options');
+                dropdownOptions.style.display = 'none';
+            });
+        }
+    });
+});
+
+
+
 // Footer: copy email to clipboard on click
 function copyEmailToClipboard() {
     var copyText = document.getElementById("emailAddress");

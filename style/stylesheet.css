@@ -478,7 +478,7 @@ header .logo:hover::after {
     position: relative;
     height: 38px;
     width: 38px;
-    transform: translateY(47%);
+    transform: translateY(60%);
     background-color: #f6f2f280;
     display: none;
 }
@@ -539,19 +539,21 @@ ul.dropdown-options li a, ul.dropdown-options li p {
     .main-nav > button {
         display: block; 
     }
-    .dropdown-toggle:hover .dropdown-options {
+    .dropdown-options {
         position: absolute;
         top: 0px;
-        left: -195px;
+        left: -213px;
         margin-left: calc(var(--element-spacing) / 2);
         border-radius: 10px;
         background: #404040d7;
-        display: flex;
         justify-content: center;
         align-items: center;
-        width: 185px;
+        width: 200px;
         height: 120px;
         gap: 10px;
+    }
+    .dropdown-toggle:hover .dropdown-options {
+        display: flex;
     }
     ul.dropdown-options li a, ul.dropdown-options li p {
         line-height: 1.3;
