@@ -61,6 +61,10 @@
                         </ul>
                     </li>
                 </ul>
+                <button id="nav-button" class="shadow-on-hover">
+                    <div class="left-arrow-2 nav-graphic-1"></div>
+                    <div class="left-arrow-2 nav-graphic-2"></div>
+                </button>
             </nav>
         </header>
     
@@ -111,12 +115,20 @@
 
         <section class="section current-events-2"> 
             <img class="bg-media" src="..\assets\images\background\mini-green-browser.png" alt="background image of green browser">
-            <img class="bg-media-graphic" src="..\assets\images\webpage-graphic\close-browser-icon.png" alt="close icon for background image of green browser ">
+            <img class="current-events-2-graphic bg-media" src="..\assets\images\background\mini-green-browser-2.png" alt="background image of green browser">
             <div class="section-title-rounded-inverse">
                 <h2>stay up to date:</h2>
             </div>
             <div class="section-content flex-wrapped-container">
-                <div class="sub-section-content">
+                <button id="current-events-2-back-button" class="back-button">
+                    <div class="left-arrow"></div>
+                    <div class="horizontal-line"></div>
+                </button>
+                <button id="current-events-2-next-button" class="next-button">
+                    <div class="horizontal-line"></div>
+                    <div class="right-arrow"></div>
+                </button>
+                <div class="sub-section-content current-events-2-list-item">
                     <img src="..\assets\images\webpage-graphic\save-icon-butterfly.png" alt="butterfly save icon">
                     <button class="flex-centered shadow-on-hover" onclick="location.href = '../about.html'">
                         <p>in my community</p>
@@ -124,7 +136,7 @@
                         <div class="right-arrow"></div>
                     </button>
                 </div>
-                <div class="sub-section-content">
+                <div class="sub-section-content current-events-2-list-item">
                     <img src="..\assets\images\webpage-graphic\save-icon-earth.png" alt="earth save icon">
                     <button class="flex-centered shadow-on-hover" onclick="location.href = '../about.html'">
                         <p>global village</p>
@@ -132,7 +144,7 @@
                         <div class="right-arrow"></div>
                     </button>
                 </div>
-                <div class="sub-section-content">
+                <div class="sub-section-content current-events-2-list-item">
                     <img src="..\assets\images\webpage-graphic\save-icon-saturn.png" alt="saturn save icon">
                     <button class="flex-centered shadow-on-hover" onclick="location.href = '../about.html'">
                         <p>add event/news</p>
