@@ -90,10 +90,10 @@ function fallbackCopyText(copyText) {
     // Copy the text inside the text field
     try {
         var successful = document.execCommand('copy');
-        var msg = successful ? 'successful' : 'unsuccessful';
-        alert('Fallback: Copying text command was ' + msg);
+        var msg = successful ? 'successfully' : 'unsuccessfully';
+        alert('Email was copied' + msg);
     } catch (err) {
-        console.error('Fallback: Oops, unable to copy', err);
+        console.error('Oops, unable to copy email', err);
     }
 }
 

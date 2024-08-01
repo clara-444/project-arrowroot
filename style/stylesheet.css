@@ -519,6 +519,7 @@ ul.dropdown-options li a, ul.dropdown-options li p {
     padding: calc(var(--element-spacing) / 1.25) calc(var(--element-spacing) * 4 / 1.25);
     font-size: 1.2rem;
     z-index: 11;
+    text-wrap: nowrap;
 }
 
 /* change to vertical alignments of buttons */
