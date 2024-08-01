@@ -13,46 +13,90 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 
-    dropdownToggles.forEach(toggle => {
-        toggle.addEventListener('click', function(event) {
-            event.stopPropagation(); // Prevent the click from bubbling up
-
-            // Close all other dropdowns
-            dropdownToggles.forEach(otherToggle => {
-                if (otherToggle !== toggle) {
-                    const otherDropdownOptions = otherToggle.querySelector('.dropdown-options');
-                    otherDropdownOptions.style.display = 'none';
-                }
+    function handleDropdowns() {
+        if (window.matchMedia('(max-width: 738px)').matches) {
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', toggleDropdown);
             });
 
-            // Toggle the clicked dropdown
-            const dropdownOptions = this.querySelector('.dropdown-options');
-            const isVisible = dropdownOptions.style.display === 'flex';
-            dropdownOptions.style.display = isVisible ? 'none' : 'flex';
-        });
-    });
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', closeDropdowns);
+        } else {
+            dropdownToggles.forEach(toggle => {
+                toggle.removeEventListener('click', toggleDropdown);
+            });
 
-    // Close dropdowns when clicking outside
-    document.addEventListener('click', function(event) {
+            document.removeEventListener('click', closeDropdowns);
+        }
+    }
+
+    function toggleDropdown(event) {
+        event.stopPropagation(); // Prevent the click from bubbling up
+
+        // Close all other dropdowns
+        dropdownToggles.forEach(otherToggle => {
+            if (otherToggle !== this) {
+                const otherDropdownOptions = otherToggle.querySelector('.dropdown-options');
+                otherDropdownOptions.style.display = 'none';
+            }
+        });
+
+        // Toggle the clicked dropdown
+        const dropdownOptions = this.querySelector('.dropdown-options');
+        const isVisible = dropdownOptions.style.display === 'flex';
+        dropdownOptions.style.display = isVisible ? 'none' : 'flex';
+    }
+
+    function closeDropdowns(event) {
         if (!event.target.closest('.dropdown-toggle')) {
             dropdownToggles.forEach(toggle => {
                 const dropdownOptions = toggle.querySelector('.dropdown-options');
                 dropdownOptions.style.display = 'none';
             });
         }
-    });
-});
+    }
 
+    // Initial check
+    handleDropdowns();
+
+    // Add event listener for window resize
+    window.addEventListener('resize', handleDropdowns);
+});
 
 
 // Footer: copy email to clipboard on click
 function copyEmailToClipboard() {
     var copyText = document.getElementById("emailAddress");
+
+    // Check if the Clipboard API is supported
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(copyText.value).then(function() {
+            alert("Copied the email: " + copyText.value); // Optional: alert the user
+        }).catch(function(err) {
+            console.error("Could not copy text: ", err);
+            fallbackCopyText(copyText);
+        });
+    } else {
+        // Fallback for older browsers
+        fallbackCopyText(copyText);
+    }
+}
+
+function fallbackCopyText(copyText) {
+    // Select the text field
     copyText.select();
     copyText.setSelectionRange(0, 99999); // For mobile devices
-    navigator.clipboard.writeText(copyText.value);
-    alert("Copied the email: " + copyText.value); // Optional: alert the user
+
+    // Copy the text inside the text field
+    try {
+        var successful = document.execCommand('copy');
+        var msg = successful ? 'successful' : 'unsuccessful';
+        alert('Fallback: Copying text command was ' + msg);
+    } catch (err) {
+        console.error('Fallback: Oops, unable to copy', err);
+    }
 }
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const backButton = document.getElementById('explore-program-questions-back-button');
