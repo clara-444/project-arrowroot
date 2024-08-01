@@ -1481,7 +1481,8 @@ footer  .logo {
 }
 @media (max-width: 555px) {
     .section.explore-program-questions > .section-content {
-        max-width: 350px;
+        max-width: 360px;
+        font-size: 11px;
     }
 }
 
