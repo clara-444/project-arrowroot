@@ -183,7 +183,7 @@ footer { padding: calc(var(--section-padding-spacing) / 3); }
 
 /* background looped videos */
 /* requires: parent has relative position (typically .section)*/ 
-.bg-media {
+.bg-media, .bg-image {
     position: absolute;
     left: 0;
     top: 0;
@@ -191,6 +191,19 @@ footer { padding: calc(var(--section-padding-spacing) / 3); }
     height: 100%;
     object-fit: cover;
     z-index: -10;
+}
+
+.bg-image {
+    display: none;
+}
+
+@media (max-width: 415px) {
+    .bg-media {
+        display: none;
+    }
+    .bg-image {
+        display: block;
+    }
 }
 
 /* display shadow on hover */
@@ -729,7 +742,8 @@ footer  .logo {
     width: 25px;
     height: 25px; }
 .home-title > .section-content > .home-nav button:hover { /*!!! ADD LINK TO BUTTONS */ 
-    background-color: var(--colour-green-3-transparent); 
+    /*background-color: var(--colour-green-3-transparent); !!! UNCOMMENT WHEN FUNCTIONALITY ADDED*/
+    cursor: auto;
 }
 
 /* style for title text */
@@ -809,6 +823,8 @@ footer  .logo {
     padding-top: var(--vertical-line-height-1); 
     padding-bottom: calc(var(--vertical-line-height-1) * 1.1) ;
     /**/
+    max-width: 100%;
+    overflow-x: hidden;
     display: block;
     background: radial-gradient(transparent , var(--colour-bg) 90%), linear-gradient(to right, var(--colour-orange-light) 40%, var(--colour-green-3) 50%);
 }
@@ -853,6 +869,8 @@ footer  .logo {
     padding-bottom: calc(var(--vertical-line-height-1) * 2.5); /*make space for sdg-graphic */
     background-color: var(--colour-beige); 
     display: block;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 /* transform half the arrow line by 50% to overlap the previous home1 section */
@@ -1077,6 +1095,8 @@ footer  .logo {
     text-align: center;
     min-height: calc(3.2 * (0.5 * var(--large-circular-element-size)) + (80vw - 2*var(--section-padding-spacing)) / 2.97);
     line-height: 1;
+    max-width: 100%;
+    overflow-x: hidden
 }
 
 .home3 > .section-content {
@@ -1325,7 +1345,8 @@ footer  .logo {
 
 .section.explore-program-2 > .section-content {
     justify-content: center;
-    column-gap: 100px;
+    column-gap: 60px;
+    row-gap: 0px;
 }
 
 .partner-logo-1 {
@@ -1346,7 +1367,7 @@ footer  .logo {
     }
     .partner-logo-2 {
         max-height: 45px;
-        margin-top: calc(var(--element-spacing) * 7);
+        margin-top: calc(var(--element-spacing) * 8);
     }
     .stories-partnerships-1 > .section-content {
         column-gap: 1rem; 

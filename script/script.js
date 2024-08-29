@@ -91,7 +91,7 @@ function fallbackCopyText(copyText) {
     try {
         var successful = document.execCommand('copy');
         var msg = successful ? 'successfully' : 'unsuccessfully';
-        alert('Email was copied' + msg);
+        alert('projectarrowroot@gmail.com has been copied ' + msg);
     } catch (err) {
         console.error('Oops, unable to copy email', err);
     }
@@ -145,8 +145,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Hide all items except the first one
     function updateVisibility() {
         if (window.innerWidth < 1145) {
-            items.forEach((item, index) => {
-                if (index !== 0) item.style.display = 'none';
+            items.forEach((item, i) => {
+                item.style.display = (i === index) ? 'block' : 'none';
             });
         } else {
             items.forEach(item => {
