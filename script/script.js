@@ -107,8 +107,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Hide all items except the first one
     function updateVisibility() {
         if (window.innerWidth < 1102) {
-            items.forEach((item, index) => {
-                if (index !== 0) item.style.display = 'none';
+            items.forEach((item, i) => {
+                item.style.display = (i === index) ? 'block' : 'none';
             });
         } else {
             items.forEach(item => {

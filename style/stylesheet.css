@@ -360,6 +360,13 @@ footer { padding: calc(var(--section-padding-spacing) / 3); }
     flex-direction: column;
 }
 
+.under-construction a {
+    font-family: var(--font-csn);
+    font-style: italic;
+    letter-spacing: 0.5px;
+    font-size: 40px;
+}
+
 /* colour in rounded section of footer*/
 /* requires: set colour / add a colour class in addition to adding .footer-bg class*/
 .footer-bg {
@@ -1344,6 +1351,9 @@ footer  .logo {
 }
 
 .section.explore-program-2 > .section-content {
+    width: 70%;
+    max-width: 990px;
+    margin: 0 auto;
     justify-content: center;
     column-gap: 60px;
     row-gap: 0px;
