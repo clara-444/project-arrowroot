@@ -1346,29 +1346,36 @@ footer  .logo {
     background-color: var(--colour-bg);
     min-height: min-content;
     padding: calc(var(--section-padding-spacing) * (1/2)) var(--section-padding-spacing);
-    padding-bottom: var(--section-padding-spacing);
+    padding-bottom: calc(var(--section-padding-spacing) * 1/40) ;
     line-height: 1;
 }
 
 .section.explore-program-2 > .section-content {
     width: 70%;
     max-width: 990px;
-    margin: 0 auto;
+    margin: 30px auto;
     justify-content: center;
-    column-gap: 60px;
+    
+    column-gap: 12px;
     row-gap: 0px;
 }
 
 .partner-logo-1 {
-    margin-top: calc(var(--element-spacing) * 5);
+    /* margin-top: calc(var(--element-spacing) * 5); */
     object-fit: contain;
     max-height: 100px;
 }
 
 .partner-logo-2 {
-    margin-top: calc(var(--element-spacing) * 9);
+    /* margin-top: calc(var(--element-spacing) * 9); */
     object-fit: contain;
     max-height: 60px;
+}
+
+.partner-logo-3 {
+    margin-top: calc(var(--element-spacing) * -6);
+    object-fit: contain;
+    max-height: 170px;
 }
 
 @media (max-width: 782px) {
