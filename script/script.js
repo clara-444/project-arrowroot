@@ -117,19 +117,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    backButton.addEventListener('click', function() {
-        console.log('Back button clicked');
-        items[index].style.display = 'none';
-        index = (index - 1 + items.length) % items.length;
-        items[index].style.display = 'block';
-    });
-
-    nextButton.addEventListener('click', function() {
-        console.log('Next button clicked');
-        items[index].style.display = 'none';
-        index = (index + 1) % items.length;
-        items[index].style.display = 'block';
-    });
+    if (backButton) {
+        backButton.addEventListener('click', function() {
+            console.log('Back button clicked');
+            items[index].style.display = 'none';
+            index = (index - 1 + items.length) % items.length;
+            items[index].style.display = 'block';
+        });
+    }
+    
+    if (nextButton) {
+        nextButton.addEventListener('click', function() {
+            console.log('Next button clicked');
+            items[index].style.display = 'none';
+            index = (index + 1) % items.length;
+            items[index].style.display = 'block';
+        });
+    }
 
     window.addEventListener('resize', updateVisibility);
     updateVisibility();
@@ -155,25 +159,95 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    backButton.addEventListener('click', function() {
-        // Hide the current item
-        items[index].style.display = 'none';
+    if(backButton) {
+        backButton.addEventListener('click', function() {
+            // Hide the current item
+            items[index].style.display = 'none';
 
-        // Calculate the previous index
-        index = (index - 1 + items.length) % items.length;
+            // Calculate the previous index
+            index = (index - 1 + items.length) % items.length;
 
-        // Show the previous item
-        items[index].style.display = 'block';
-    });
-
-    nextButton.addEventListener('click', function() {
-        items[index].style.display = 'none';
-        index = (index + 1) % items.length;
-        items[index].style.display = 'block';
-    });
+            // Show the previous item
+            items[index].style.display = 'block';
+        });
+    }
     
+    if (nextButton) {
+        nextButton.addEventListener('click', function() {
+            items[index].style.display = 'none';
+            index = (index + 1) % items.length;
+            items[index].style.display = 'block';
+        });
+    }
+
     window.addEventListener('resize', updateVisibility);
         updateVisibility();
+});
+
+
+// Pausing bg-media when off-screen
+const videos = document.querySelectorAll('.bg-media');
+
+const videoObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const video = entry.target;
+
+    if (entry.isIntersecting) {
+      video.play().catch(err => {
+        console.warn('Autoplay blocked:', err);
+      });
+    } else {
+      video.pause();
+    }
+  });
+}, { threshold: 0.35 }); // triggers when 35% of video is visible
+
+videos.forEach(video => {
+  videoObserver.observe(video);
+});
+
+// Cool data number display
+function easeOutCubic(t) {
+  return 1 - Math.pow(1 - t, 3);
+}
+
+function countUp(element, target, duration, suffix = "") {
+  let startTime = null;
+
+  function update(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const progress = Math.min((timestamp - startTime) / duration, 1);
+    const easedProgress = easeOutCubic(progress);
+
+    element.textContent = Math.floor(easedProgress * target) + suffix;
+
+    if (progress < 1) {
+      requestAnimationFrame(update);
+    } else {
+      element.textContent = target + suffix; // final value
+    }
+  }
+
+  requestAnimationFrame(update);
+}
+
+const observer = new IntersectionObserver((entries, obs) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      el.classList.add("visible");
+
+      const target = parseInt(el.getAttribute("data-target"), 10);
+      const suffix = el.getAttribute("data-suffix") || "";
+      countUp(el, target, 2000, suffix);
+
+      obs.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.counter').forEach(counter => {
+  observer.observe(counter);
 });
 
 
