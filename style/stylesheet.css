@@ -28,14 +28,17 @@
     --colour-blue-9: linear-gradient(90deg, #7496a680, #525b7480);
     --colour-blue-10: #E7FBFF;
     --colour-blue-10-transparent: #E7FBFF80;
+    --colour-blue-11: #dffaff;
     --colour-teal: #c0f2d5;
     --colour-beige: #eee4d2;
     --colour-beige-2: #EEE3D1;
     --colour-brown: #e0c69e;
+    --colour-brown-2: #f1ead0;
     --colour-bg: #F4F4F4 ;
     --colour-bg-transparent: #f5f5f5b3;
     --colour-lightened-text: #737373;
     --colour-lightened-text-2: #4B494A;
+    --colour-yellow-1: #e6ffa8;
     /* fonts */
     --font-baskerville: 'Libre Baskerville', sans-serif;  
     --font-csn: "Computer Says No", sans-serif; 
@@ -172,11 +175,13 @@ footer { padding: calc(var(--section-padding-spacing) / 3); }
 .blue7 { background-color: var(--colour-blue-7); }
 .blue8 { background-color: var(--colour-blue-8); }
 .blue9 { background: var(--colour-blue-9); }
-.beige { background-color: var(--colour-beige);}
-.bg-colour { background-color: var(--colour-bg);}
 .blue10 { background-color: var(--colour-blue-10);}
+.blue11{ background-color: var(--colour-blue-11);}
+.beige { background-color: var(--colour-beige);}
+.brown2 { background-color: var(--colour-brown-2);}
+.bg-colour { background-color: var(--colour-bg);}
 .white-black-gradient { background: linear-gradient(to left, black, #e8e8e5);}
-
+.yellow-1 { background-color: var(--colour-yellow-1); }
 .white-title-text {
     color: white;
 }
@@ -1656,6 +1661,73 @@ footer  .logo {
     }
 }
 
+/* ||| MISSION STUDENT DEMAND ||| */ 
+
+.data-bubble-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 5px;
+}
+
+.circle {
+    border-radius: 50%;
+    padding: 20px;
+    width: 120px;
+    height: 120px;
+    display: block;
+    margin: 10px;
+}
+
+.mission-student-demand {
+    min-height: max-content;
+}
+
+.mission-student-demand > .section-content {
+    width: 100%;
+    padding: 20px;
+    
+}
+
+.mission-student-demand > .section-content > .data-bubble-container > .circle {
+    width: 300px;
+    height: 300px;
+}
+
+.mission-student-demand > .section-content > .data-bubble-container > .circle > .number {
+    font-family: var(--font-baskerville);
+    font-size: 4.5rem;
+    margin-bottom: 0;
+}
+
+.mission-student-demand > .section-content > .data-bubble-container > .circle > .description { 
+    margin-top: 0;
+}
+
+@media (max-width: 1050px) {
+    .mission-student-demand > .section-content > .data-bubble-container > .circle > .number {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .mission-student-demand > .section-content > .data-bubble-container > .circle > .number {
+        font-size: 3.8rem;
+    }
+}
+
+@media (max-width: 555px) {
+    .mission-student-demand > .section-content > .data-bubble-container > .circle {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+
+/* ||| MISSION STUDENT CAPACITY ||| */ 
 
 /* ||| MISSION 1 ||| */ 
 .section.mission-1 {
