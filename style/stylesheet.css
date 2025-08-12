@@ -1834,15 +1834,31 @@ footer  .logo {
     .mission-student-capacity > .section-content > .data-bubble-container > .brown2 { 
         transform: translate(100%, -20%);
     }
+
+    .mission-student-capacity > .section-content > .data-bubble-container > .circle.yellow-1 { 
+        transform: translate(0, 50%);
+    }
+
+        .mission-student-capacity > .section-content > .data-bubble-container > .circle.blue11 { 
+        transform: translate(0, 0);
+    }
+    .arrow {
+        transform: translate(0, 120%);
+    }
 }
 
 @media (max-width: 705px) {
+
+    .mission-student-capacity > .section-content > .data-bubble-container > .circle.yellow-1 { 
+        transform: translate(0, 0);
+    }
+
     .arrow {
-    
-    width: 86.2px;
-    height: 69px;
-    
-    clip-path: polygon(0 57.9%, 12.9% 57.9%, 12.9% 0, 87.1% 0, 87.1% 57.9%, 100% 57.9%, 50% 100%);
+        transform: translate(0,0);
+        width: 86.2px;
+        height: 69px;
+        
+        clip-path: polygon(0 57.9%, 12.9% 57.9%, 12.9% 0, 87.1% 0, 87.1% 57.9%, 100% 57.9%, 50% 100%);
     }
 
     .mission-student-capacity > .section-content > .data-bubble-container > .brown2 { 
