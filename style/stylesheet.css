@@ -1676,8 +1676,8 @@ footer  .logo {
 .circle {
     border-radius: 50%;
     padding: 20px;
-    width: 120px;
-    height: 120px;
+    width: 300px;
+    height: 300px;
     display: block;
     margin: 10px;
 }
@@ -1689,7 +1689,6 @@ footer  .logo {
 .mission-student-demand > .section-content {
     width: 100%;
     padding: 20px;
-    
 }
 
 .mission-student-demand > .section-content > .data-bubble-container > .circle {
@@ -1717,13 +1716,13 @@ footer  .logo {
 }
 
 @media (max-width: 1050px) {
-    .mission-student-demand > .section-content > .data-bubble-container > .circle > .number {
+    .number {
         font-size: 4rem;
     }
 }
 
 @media (max-width: 900px) {
-    .mission-student-demand > .section-content > .data-bubble-container > .circle > .number {
+    .number {
         font-size: 3.8rem;
     }
 }
@@ -1737,6 +1736,136 @@ footer  .logo {
 
 
 /* ||| MISSION STUDENT CAPACITY ||| */ 
+
+.mission-student-capacity {
+    min-height: max-content;
+}
+
+.mission-student-capacity > .bg-image {
+    display: block;
+} 
+
+.mission-student-capacity > .section-content {
+    width: 100%;
+    padding: 20px;
+}
+
+.mission-student-capacity > .section-content > .data-bubble-container {
+    justify-content: center;
+    margin-top: 10px;
+}
+
+
+.arrow {
+  display: flex;
+  width: 7%;
+  height: 113.2px;
+  justify-content: center;
+  align-items: center;
+  
+  clip-path: polygon(0 22.2%, 53.3% 22.2%, 53.3% 0, 100% 50%, 53.3% 100%, 53.3% 77.8%, 0 77.8%);
+}
+
+.arrow p {
+    margin-left: -3px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.mission-student-capacity > .section-content > .data-bubble-container > .circle > .number {
+    font-family: var(--font-baskerville);
+    font-size: 4.5rem;
+    margin-bottom: 0;
+   
+}
+
+.mission-student-capacity > .section-content > .data-bubble-container > .circle > .description { 
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.mission-student-capacity > .section-content > .data-bubble-container > .blue11 { 
+    width: 280px;
+    height: 280px;
+    transform: translate(0, -10%);
+}
+
+
+.mission-student-capacity > .section-content > .data-bubble-container > .brown2 { 
+    width: 260px;
+    height: 260px;
+    transform: translate(0, 10%);
+}
+
+.mission-student-capacity > .section-content > .data-bubble-container > .blue11 > p { 
+    margin: -15px 0;
+}
+
+.mission-student-capacity > .section-content > .data-bubble-container > .blue11 > .number { 
+    margin: -15px 0;
+}
+
+.mission-student-capacity > .section-content > .data-bubble-container > .brown2 > p { 
+    margin: -15px 0;
+}
+
+.mission-student-capacity > .section-content > .data-bubble-container > .brown2 > .number { 
+    margin: -15px 0;
+}
+
+
+@media (max-width: 1080px) {
+    .arrow {
+        width: 5%;
+        
+    }
+    .arrow p {
+        font-size: 0.8rem;
+        margin-left: 15px;
+    }
+
+    .mission-student-capacity > .section-content > .data-bubble-container > .circle.yellow-1 { 
+        width: 272px;
+        height: 272px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .mission-student-capacity > .section-content > .data-bubble-container > .brown2 { 
+        transform: translate(100%, -20%);
+    }
+}
+
+@media (max-width: 705px) {
+    .arrow {
+    
+    width: 86.2px;
+    height: 69px;
+    
+    clip-path: polygon(0 57.9%, 12.9% 57.9%, 12.9% 0, 87.1% 0, 87.1% 57.9%, 100% 57.9%, 50% 100%);
+    }
+
+    .mission-student-capacity > .section-content > .data-bubble-container > .brown2 { 
+        transform: translate(0%, 0);
+    }
+}
+
+@media (max-width: 555px) {
+    .mission-student-capacity > .section-content > .data-bubble-container > .circle.yellow-1 { 
+        width: 230px;
+        height: 230px;
+    }
+    .mission-student-capacity > .section-content > .data-bubble-container > .blue11 { 
+        width: 230px;
+        height: 230px;
+        transform: translate(0,0);
+    }
+    .mission-student-capacity > .section-content > .data-bubble-container > .brown2 { 
+        width: 210px;
+        height: 210px;
+    }
+}
+
 
 /* ||| MISSION 1 ||| */ 
 .section.mission-1 {
