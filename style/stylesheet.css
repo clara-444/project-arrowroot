@@ -1575,28 +1575,37 @@ footer  .logo {
     background-color: var(--colour-blue-10);
     min-height: max-content;
 }
-.mission-overview > img {
-    position: absolute;
-    width: 30%;
-    left: 5%;
-    top: 50%;
-    transform: translateY(-50%);
-}
+
 .mission-overview > .section-content {
-    width: 55%;
-    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 10px;
+}
+
+.mission-overview > .section-content > .grid-item {
+    display: block;
+    align-items: center;
     text-align: left;
-    margin-left: 40%;
+
 }
-.mission-overview > .section-content > h2 {
-    display: block;
+
+.mission-overview > .section-content > .grid-item > img {
+    width: 60%;
+    transform: translate(50%, 0);
 }
-.mission-overview > .section-content > p.green {
+
+.mission-overview > .section-content > .grid-item > h2, p {
     display: block;
-    text-align: center;
-    padding: var(--element-spacing);
     margin: 1rem;
-    border-radius: var(--rounded-border-size);
+}
+
+.mission-overview > .section-content > .grid-item > p.green {
+    display: block;
+    text-align: left;
+    padding: calc(var(--element-spacing) * 3.3);
+    margin: 1rem;
+    border-radius: 40px;
 }
 
 /* format arrow graphics */
@@ -1614,25 +1623,38 @@ footer  .logo {
 }
 
 @media (max-width: 1050px) {
-    .mission-overview > img {
-        display: none; 
+    .mission-overview > .section-content {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 0.8fr;
+        gap: 10px;
     }
     .mission-overview > .section-content { 
         margin-left: 15%;
         width: 75%;
     }
+
+    .mission-overview > .section-content > .grid-item > img {
+        width: 70%;
+        transform: translate(20%, 0);
+    }
 }
 
 @media (max-width: 900px) {
-    .mission-overview-graphic {
-        display: none;
+    .mission-overview > .section-content {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.4fr 1fr;
+        gap: 5px;
     }
     .mission-overview > .section-content { 
         margin-left: 5%;
         width: 90%;
     }
-}
 
+    .mission-overview > .section-content > .grid-item > img {
+        width: 70%;
+        transform: translate(20%, 0);
+    }
+}
 
 
 /* ||| MISSION 1 ||| */ 
@@ -2053,7 +2075,7 @@ footer  .logo {
 /* ||| CURRENT EVENTS 1 ||| */ 
 .section.current-events-1 {
     background-color: var(--colour-beige-2);    
-    padding: var(--section-padding-spacing) calc(var(--section-padding-spacing) / 2);
+    padding: var(--section-padding-spacing) calc(var(--section-padding) / 2);
 }
 
 .section.current-events-1 > h2 {
