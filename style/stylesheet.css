@@ -1924,6 +1924,53 @@ footer  .logo {
     }
 }
 
+/* ||| MISSION CAREERS + CLIMATE ||| */ 
+
+.mission-careers-climate {
+    min-height: max-content;
+}
+
+.rounded-rectangle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    align-items: center;      
+    border-radius: 20px;
+    border: solid var(--colour-lightened-text) 1px;
+    max-width: 20%;
+    min-height: 200px;
+}
+
+.rounded-rectangle > .number {
+    font-family: var(--font-arial);
+    font-size: 1.2rem;
+}
+
+@media (max-width: 1080px) {
+    .mission-careers-climate > .section-content > .data-bubble-container {
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+
+    .rounded-rectangle {
+
+        max-width: 80%;
+        min-height: 150px;
+    }
+}
+
+@media (max-width: 555px) {
+    .mission-careers-climate > .section-content > .data-bubble-container {
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+
+    .rounded-rectangle {
+
+        max-width: 80%;
+        min-height: 150px;
+    }
+}
 
 
 
