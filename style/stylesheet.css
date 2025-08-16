@@ -1600,7 +1600,13 @@ footer  .logo {
     transform: translate(50%, 0);
 }
 
-.mission-overview > .section-content > .grid-item > h2, p {
+.mission-overview > .section-content > .grid-item > h2, 
+.mission-overview p, 
+.mission-student-demand p, 
+.mission-student-capacity p,
+.mission-careers-climate p,
+.mission-1 p,
+.mission-2 p {
     display: block;
     margin: 1rem;
 }
