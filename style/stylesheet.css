@@ -706,14 +706,15 @@ footer  .logo {
     position: relative; 
     height: 860px;
     /* align section-content to left edge */
+    padding-left: 20%;
     display: flex;
-    justify-content: right;
+    justify-content: center;
     align-items: end;
 }
 
 .home-title > .section-content {
     position: relative; /* allows for abs pos of globe & home-title-graphic*/
-    width: min(70%, 1150px);
+    width: min(75%, 1050px);
     height: 650px;
     padding: 1.5rem; 
     padding-left: 15%;
@@ -765,12 +766,15 @@ footer  .logo {
 .home-title > .section-content > .home-title-text {
     text-align: left;
     margin-left: 140px;
-    width: 420px;} 
+    width: 420px;
+} 
 .home-title-text > h1 {
     line-height: normal;
 }
 .home-title-text span {
     color: var(--colour-green-2);
+    display: block;
+    font-weight: bold;
 }
 
 /* style for arrow graphic */
@@ -789,18 +793,20 @@ footer  .logo {
 }
 
 /* reduce spacing between text and globe */
-@media (max-width: 1200px) {
+@media (max-width: 1550px) {
     .home-title > .section-content > .home-title-text {
-        margin-left: 200px;
+        margin-left: 180px;
         width: auto; /* title-text wraps when reaching maximum width*/ 
     }
 }
 
 /* remove display of globe image at smaller widths*/
 @media (max-width: 1050px) { 
+    .section.home-title { 
+        padding: 5%;
+    }
     .home-title > .section-content { 
         padding-left: 1.5rem;
-
     }
     .home-title > .section-content > .img-container {
         display: none; 
@@ -863,6 +869,13 @@ footer  .logo {
     border-radius: var(--rounded-border-size);
     min-height: 77px;
     padding: 5%;
+}
+
+/* when screen width decreases, split elements into 2 per line*/
+@media (max-width: 1135px) {
+    .home-1 > .section-content {
+        width: min(750px, 90%);
+    }
 }
 
 /* elements shrunk for mobile */
