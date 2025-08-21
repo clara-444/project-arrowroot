@@ -97,6 +97,39 @@ function fallbackCopyText(copyText) {
     }
 }
 
+// home-3 buttons
+// home-3 buttons
+document.addEventListener('DOMContentLoaded', function () {
+    const triggers = document.querySelectorAll('.hidden-content-trigger');
+  
+    triggers.forEach(trigger => {
+      const hiddenContent = trigger.nextElementSibling; // assumes direct sibling
+      const parentElement = trigger.closest('.home-3-element'); // the card
+  
+      // Open on trigger click
+      trigger.addEventListener('click', () => {
+        hiddenContent.style.display = 'block';
+        hiddenContent.style.zIndex = '5'; 
+        if (parentElement) {
+          parentElement.style.zIndex = '1'; // raise whole element, if needed
+        }
+      });
+  
+      // Close button inside
+      const closeBtn = hiddenContent.querySelector('.close-btn');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          hiddenContent.style.display = 'none';
+          hiddenContent.style.zIndex = ''; // reset to stylesheet value
+          if (parentElement) {
+            parentElement.style.zIndex = ''; // reset card stacking
+          }
+        });
+      }
+    });
+  });
+  
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const backButton = document.getElementById('explore-program-questions-back-button');

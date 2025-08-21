@@ -29,7 +29,6 @@
     --colour-blue-10: #E7FBFF;
     --colour-blue-10-transparent: #E7FBFF80;
     --colour-blue-11: #dffaff;
-    --colour-teal: #c0f2d5;
     --colour-beige: #eee4d2;
     --colour-beige-2: #EEE3D1;
     --colour-brown: #e0c69e;
@@ -706,14 +705,15 @@ footer  .logo {
     position: relative; 
     height: 860px;
     /* align section-content to left edge */
+    padding-left: 20%;
     display: flex;
-    justify-content: right;
+    justify-content: center;
     align-items: end;
 }
 
 .home-title > .section-content {
     position: relative; /* allows for abs pos of globe & home-title-graphic*/
-    width: min(70%, 1150px);
+    width: min(80%, 1000px);
     height: 650px;
     padding: 1.5rem; 
     padding-left: 15%;
@@ -765,12 +765,14 @@ footer  .logo {
 .home-title > .section-content > .home-title-text {
     text-align: left;
     margin-left: 140px;
-    width: 420px;} 
+    width: 420px;
+} 
 .home-title-text > h1 {
     line-height: normal;
 }
 .home-title-text span {
     color: var(--colour-green-2);
+    display: block;
 }
 
 /* style for arrow graphic */
@@ -789,18 +791,26 @@ footer  .logo {
 }
 
 /* reduce spacing between text and globe */
-@media (max-width: 1200px) {
+@media (max-width: 1550px) {
     .home-title > .section-content > .home-title-text {
-        margin-left: 200px;
+        margin-left: 180px;
         width: auto; /* title-text wraps when reaching maximum width*/ 
+    }
+    .section.home-title { 
+        justify-content: right;
+    }
+    .home-title > .section-content {
+        width: 90%;
     }
 }
 
 /* remove display of globe image at smaller widths*/
 @media (max-width: 1050px) { 
+    .section.home-title { 
+        padding: 5%;
+    }
     .home-title > .section-content { 
         padding-left: 1.5rem;
-
     }
     .home-title > .section-content > .img-container {
         display: none; 
@@ -865,15 +875,35 @@ footer  .logo {
     padding: 5%;
 }
 
+/* when screen width decreases, split elements into 2 per line*/
+@media (max-width: 1135px) {
+    .home-1 > .section-content {
+        width: min(750px, 90%);
+    }
+}
+
 /* elements shrunk for mobile */
-@media (max-width: 555px) {
+@media (max-width: 586px) {
     .home-1 > .section-content > .flex-item {
-        width: 154px;
+        width: 200px;
     }
     .home-1 > .section-content > .flex-item > p {
         padding: 10%;
     }
 }
+@media (max-width: 487px) {
+    .home-1 > .section-content > .flex-item {
+        width: 120px;
+    }
+    .home-1 > .section-content > .flex-item > p {
+        padding: 10%;
+        font-size: 0.9rem;
+    }
+    .home-1 > .section-content {
+        width: min(300px, 95%);
+    }
+}
+
 
 
 
@@ -949,7 +979,7 @@ footer  .logo {
  /* only display element when hands graphic dissapears */
 .home2-graphic {
     display: none;
-    background-color: var(--colour-teal); 
+    background-color: var(--colour-blue-10); 
     border: 1px solid rgba(0, 0, 0, 0.645);
     border-bottom: none;
     padding: 0.5rem 2rem 0 2rem;
@@ -1107,9 +1137,7 @@ footer  .logo {
 /* ||| HOME SECTION 3 ||| */ 
 .home-3 {
     padding-bottom: calc(2 * (var(--large-circular-element-size)/2));
-    text-align: center;
     min-height: calc(3.2 * (0.5 * var(--large-circular-element-size)) + (80vw - 2*var(--section-padding-spacing)) / 2.97);
-    line-height: 1;
     max-width: 100%;
     overflow-x: hidden
 }
@@ -1117,33 +1145,130 @@ footer  .logo {
 .home-3 > .section-content {
     width: min(1200px, 100%);
     margin: auto;
+    row-gap: calc(var(--element-spacing) * 3.7);
 }
 
-.home-3 > .section-content > * {
+.home-3 > .section-content > .home-3-element {
+    position: relative;
     width: 250px;
-    height: 75px;
-    border-radius: 40px;
-    font-size: 1.5rem;
+    z-index: auto;
+}
+
+.home-3 > .section-content > .home-3-element > p {
+    position: absolute;
+    text-align: left;
+    width: 70%;
+    font-weight: bold;
+    top: 67%;
+    left: 10%;
+}
+
+.home-3 > .section-content > .home-3-element > .hidden-content-trigger {
+    position: absolute;
+    border-radius: 100px;
+    width: 11.7%;
+    height: 13%;
+    top: 82.7%;
+    right: 5.3%;
+    z-index: 2;
+}
+
+.home-3 > .section-content > .home-3-element > .hidden-content {
+    display: none;
+    position: absolute;
+    width: 100%;
+}
+
+.home-3 > .section-content > .home-3-element > .hidden-content-top {
+    top: 0%;
+    left: 0%;
+}
+
+.home-3 > .section-content > .home-3-element > .hidden-content-bottom {
+    bottom: 0%;
+    left: 0%;
+}
+
+.home-3 > .section-content > .home-3-element > .hidden-content > div {
+    position: absolute;
+    text-align: left;
+    font-size: 0.87rem;
+    width: 80%;
+    left: 10%;
+    top: 4%;
+}
+
+.home-3 > .section-content > .home-3-element > .hidden-content > div > * {
+    display: block;
+    padding-bottom: 0.4rem;
+}
+
+.home-3 > .section-content > .home-3-element > .hidden-content > .close-btn {
+    position: absolute;
+    padding-bottom: 2.3%;
+    border-radius: 100px;
+    border: 0.5px solid black;
+    width: 11.5%;
+    height: 5%;
+    right: 10%;
+    bottom: 3.9%;
+    color: white;
+    background-color:#4b494ad0;
+}
+
+/*display hidden-content when hidden-content-trigger is hovered*/
+.home-3 .hidden-content-trigger:hover {
+    display: block;
+    background-color:#748c5a7a;
 }
 
 /* elements shrunk for mobile */
-@media (max-width: 651px) {
-    .home-3 > .section-content > * {
-        width: 130px;
-        height: 80px;
+@media (max-width: 579px) {
+    .home-3 > .section-content > .home-3-element {
+        width: 200px;
+    }
+    .home-3 > .section-content > .home-3-element > p {
+        font-size: 0.9rem;
+    }
+    .home-3 > .section-content > .home-3-element > .hidden-content > .close-btn {
+        font-size: 0.9rem;
+        padding-bottom: 3.2%;
+        width: 12%;
+    }
+    .home-3 > .section-content {
+        row-gap: calc(var(--element-spacing) * 3.1);
+    }
+    .home-3 > .section-content > .home-3-element > .hidden-content > div {
+        font-size: 0.69rem;
     }
 }
 @media (max-width: 555px) {
-    .home-3 {
-        padding-bottom: 80px;
+    .home-3 > .section-content > .home-3-element > .hidden-content > .close-btn {
+        font-size: 1rem;
+        padding-bottom: 2.5%;
     }
-    .home-3 > .section-content > * {
-        width: 100px;
-        height: 65px;
+    .home-3 > .section-content > .home-3-element > .hidden-content > div {
+        font-size: 0.9rem;
     }
 }
-
-
+@media (max-width: 463px) {
+    .home-3 > .section-content > .home-3-element {
+        width: 130px;
+    }
+    .home-3 > .section-content > .home-3-element > p {
+        font-size: 0.7rem;
+    }
+    .home-3 > .section-content {
+        row-gap: calc(var(--element-spacing) * 2.5);
+    }
+    .home-3 > .section-content > .home-3-element > .hidden-content > .close-btn {
+        font-size: 0.8rem;
+        padding-bottom: 3.5%;
+    }
+    .home-3 > .section-content > .home-3-element > .hidden-content > div {
+        font-size: 0.56rem;
+    }
+}
 
 /* ||| HOME SECTION 4 ||| */ 
 .home-4 {
@@ -1885,7 +2010,7 @@ footer  .logo {
 }
 
 
-/* ||| MISSION 1 ||| */ 
+/* ||| MISSION 5 ||| */ 
 .section.mission-5 {
     min-height: max-content;
     padding: 70px 0 70px 0;
@@ -1942,7 +2067,7 @@ footer  .logo {
     }
 }
 
-/* ||| MISSION CAREERS + CLIMATE ||| */ 
+/* ||| MISSION 4 ||| */ 
 
 .mission-4 {
     min-height: max-content;
@@ -1992,7 +2117,7 @@ footer  .logo {
 
 
 
-/* ||| MISSION DETAIlS ||| */ 
+/* ||| MISSION 6 ||| */ 
 .section.mission-6 {
     min-height: calc(100vw * 0.4868292683); /* scale section size proportional to bubble img dimensions */
     background-color: var(--colour-green-1);
@@ -2063,7 +2188,7 @@ footer  .logo {
 }
 
 
-/* ||| MISSION 2 ||| */ 
+/* ||| MISSION 7 ||| */ 
 .section.mission-7 {
     background-color: var(--colour-bg);
     min-height: 500px;
@@ -2242,7 +2367,7 @@ footer  .logo {
     display: block; /* override flex to ensure elements are on seperate lines */
 }
 
-/* ||| MISSION 1 ||| */ 
+/* ||| MEET OUR TEAM 1 ||| */ 
 .section.meet-our-team-1 {
     background-color: var(--colour-green-1);
 }
@@ -2278,7 +2403,7 @@ footer  .logo {
     top: 74.5%;
 }
 
-/* style for 1 line of text on namecard */
+/* style for only 1 line of text on namecard */
 .meet-our-team-1 > .section-content > div > b.meet-our-team-1-centered-element {
     top: 71%;
 }
