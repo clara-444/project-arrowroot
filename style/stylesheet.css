@@ -714,7 +714,7 @@ footer  .logo {
 
 .home-title > .section-content {
     position: relative; /* allows for abs pos of globe & home-title-graphic*/
-    width: min(75%, 1050px);
+    width: min(80%, 1000px);
     height: 650px;
     padding: 1.5rem; 
     padding-left: 15%;
@@ -774,7 +774,6 @@ footer  .logo {
 .home-title-text span {
     color: var(--colour-green-2);
     display: block;
-    font-weight: bold;
 }
 
 /* style for arrow graphic */
@@ -797,6 +796,12 @@ footer  .logo {
     .home-title > .section-content > .home-title-text {
         margin-left: 180px;
         width: auto; /* title-text wraps when reaching maximum width*/ 
+    }
+    .section.home-title { 
+        justify-content: right;
+    }
+    .home-title > .section-content {
+        width: 90%;
     }
 }
 
