@@ -771,8 +771,8 @@ footer  .logo {
     line-height: normal;
 }
 .home-title-text span {
-    color: var(--colour-green-2);
     display: block;
+    font-weight: bold;
 }
 
 /* style for arrow graphic */
