@@ -773,6 +773,7 @@ footer  .logo {
 .home-title-text span {
     display: block;
     font-weight: bold;
+    color: var(--colour-green-2);
 }
 
 /* style for arrow graphic */
@@ -1154,6 +1155,10 @@ footer  .logo {
     z-index: auto;
 }
 
+.home-3 > .section-content > .home-3-element:hover + .hidden-content-trigger {
+    display: block;
+}
+
 .home-3 > .section-content > .home-3-element > p {
     position: absolute;
     text-align: left;
@@ -1166,10 +1171,10 @@ footer  .logo {
 .home-3 > .section-content > .home-3-element > .hidden-content-trigger {
     position: absolute;
     border-radius: 100px;
-    width: 11.7%;
-    height: 13%;
-    top: 82.7%;
-    right: 5.3%;
+    width: 15%;
+    height: 17%;
+    top: 80.7%;
+    right: 4%;
     z-index: 2;
 }
 
@@ -1216,8 +1221,12 @@ footer  .logo {
     background-color:#4b494ad0;
 }
 
-/*display hidden-content when hidden-content-trigger is hovered*/
-.home-3 .hidden-content-trigger:hover {
+/* display hidden-content when hidden-content-trigger is hovered */
+/* .home-3 .hidden-content-trigger:hover {
+    display: block;
+    background-color:#748c5a7a;
+} */
+.home-3-element:hover .hidden-content-trigger {
     display: block;
     background-color:#748c5a7a;
 }

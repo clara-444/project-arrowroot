@@ -98,7 +98,6 @@ function fallbackCopyText(copyText) {
 }
 
 // home-3 buttons
-// home-3 buttons
 document.addEventListener('DOMContentLoaded', function () {
     const triggers = document.querySelectorAll('.hidden-content-trigger');
   
@@ -111,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
         hiddenContent.style.display = 'block';
         hiddenContent.style.zIndex = '5'; 
         if (parentElement) {
-          parentElement.style.zIndex = '1'; // raise whole element, if needed
+          parentElement.style.zIndex = '1'; // raise whole element
         }
       });
   
