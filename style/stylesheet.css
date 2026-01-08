@@ -314,12 +314,36 @@ td, th { border: solid var(--colour-lightened-text) 1px; }
     transform: translateX(-50%);
 }
 
-
 .list-display {
     display: list-item;
     margin-left: 2rem;
     list-style: outside;
     list-style-type: disc;
+}
+
+.expandable-section {
+    text-align: left;
+    margin: auto;
+}
+
+.expandable-section > li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    border-top: 1.5px solid black;
+    width: min(1000px, 90%);
+    margin: auto;
+}
+
+.expandable-section > li:hover {
+    cursor: pointer;
+}
+
+.expandable-section .minus {
+    display: none;
 }
 
 
@@ -2745,27 +2769,6 @@ footer  .logo {
 
 .section.support-our-work-3 > h2 {
     font-size: 3rem;
-}
-
-.section.support-our-work-3 > ul {
-    text-align: left;
-    margin: auto;
-}
-
-.section.support-our-work-3 > ul > li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.5rem;
-    padding-top: 0.4rem;
-    padding-bottom: 0.4rem;
-    border-top: 1.5px solid black;
-    width: min(1000px, 90%);
-    margin: auto;
-}
-
-.section.support-our-work-3 > ul > li:hover {
-    cursor: pointer;
 }
 
 .section.support-our-work-3 > ul > .section-content {

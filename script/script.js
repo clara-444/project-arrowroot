@@ -104,6 +104,9 @@ document.addEventListener('DOMContentLoaded', function () {
     triggers.forEach(trigger => {
         const hiddenContent = trigger.nextElementSibling; // assumes direct sibling
         const parentElement = trigger.closest('.hidden-content-container'); // the card
+        // for expandable sections
+        const plusSign = trigger.querySelector('.plus');
+        const minusSign = trigger.querySelector('.minus');
   
         // Open on trigger click
         trigger.addEventListener('click', () => {
@@ -112,15 +115,17 @@ document.addEventListener('DOMContentLoaded', function () {
             if (isHidden) {
                 hiddenContent.style.display = 'block';
                 hiddenContent.style.zIndex = '5'; // raise hidden element
-                if (parentElement) {
-                    parentElement.style.zIndex = '1'; 
-                }
+                if (parentElement) parentElement.style.zIndex = '1'; 
+
+                plusSign.style.display = 'none';
+                minusSign.style.display = 'inline';
             } else {
                 hiddenContent.style.display = 'none';
                 hiddenContent.style.zIndex = ''; // reset to stylesheet value
-                if (parentElement) {
-                    parentElement.style.zIndex = ''; // reset card stacking
-                }
+                if (parentElement) parentElement.style.zIndex = ''; // reset card stacking
+
+                plusSign.style.display = 'inline';
+                minusSign.style.display = 'none';
             }
         });
   
@@ -130,9 +135,10 @@ document.addEventListener('DOMContentLoaded', function () {
             closeBtn.addEventListener('click', () => {
             hiddenContent.style.display = 'none';
             hiddenContent.style.zIndex = ''; // reset to stylesheet value
-            if (parentElement) {
-                parentElement.style.zIndex = ''; // reset card stacking
-            }
+            if (parentElement) parentElement.style.zIndex = ''; // reset card stacking
+
+            plusSign.style.display = 'inline';
+            minusSign.style.display = 'none';
             });
         } 
     });
