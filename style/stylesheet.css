@@ -95,6 +95,11 @@ h4 { font-family: var(--font-arial); font-weight: bold; }
 
 footer { padding: calc(var(--section-padding-spacing) / 3); } 
 
+table { border-collapse: collapse; }
+
+td, th { border: solid var(--colour-lightened-text) 1px; }
+
+
 
 
 
@@ -2650,78 +2655,322 @@ footer  .logo {
 
 
 
-/* |||| SPONSOR PAGE |||| */
-.section.sponsor-title {
+/* |||| SUPPORT OUR WORK PAGE |||| */
+.section.support-our-work-title {
     min-height: 100vh;
     background-color: #80808030;
 }
-.sponsor-title > .section-content > * {
+.support-our-work-title > .section-content > * {
     display: block; /* override flex to ensure elements are on seperate lines */
 }
 
-/* ||| SPONSOR 1 ||| (same as stories & partnerships 1 page)*/
-.section.stories-partnerships-1.sponsor-1 {
+/* ||| SUPPORT OUR WORK 1 ||| */
+.section.support-our-work-1 {
+    text-align: left;
     background-color: var(--colour-bg);
+    display: block;
+    padding-top: 40px;
+    padding-bottom: 50px;
 }
 
-
-
-
-/* ||| SPONSOR 2 ||| */ 
-.section.sponsor-2 {
-    display: none; /*!!! TEMP*/
-    padding-top: calc(var(--section-padding-spacing) / 2);
-    min-height: 300px;
+.section.support-our-work-1 .section-content-1 {
+    margin: auto;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 50px;
+    border: solid var(--colour-lightened-text) 1px;
+    width: 77%;
+    max-width: 1200px;
+    min-height: 100px;
+    padding: 1rem 1.5rem;
+    text-align: left;
 }
-.sponsor-2 > .section-content {
-    width: min(1100px, 100%);
+
+.bottom-padding {
+    padding-bottom: 10px;
+}
+
+.section.support-our-work-1 .section-content-2{
+    margin: auto;
+    margin-bottom: 40px;
+    font-family: var(--font-baskerville);
+}
+
+.section.support-our-work-1 .section-content-2 > * {
+    display: block;
+    width: 68%;
+    max-width: 1200px;
     margin: auto;
 }
 
-.sponsor-2 > .section-content > .sub-section-content {
-    width: 280px;
-    margin-top: 2rem;
+.section.support-our-work-1 .section-content-3 {
+    margin: auto;
+    width: min(1000px, 90%)
 }
 
-.sponsor-2 > .section-content > .sub-section-content > * {
+.section.support-our-work-1 .section-content-3 > .sub-section-content {
+    width: 300px;
+    text-align: center;
     display: block;
 }
-.sponsor-2 > .section-content > .sub-section-content > img {
-    height: 90px;
-    margin: auto;
-    margin-bottom: 0.75rem;
-}
-.sponsor-2 > .section-content > .sub-section-content > h3 {
-    font-style: normal;
-    color: var(--colour-lightened-text-2);
-    margin-bottom: 0.5rem;
+
+.section.support-our-work-1 .section-content-3 > .sub-section-content > img {
+    display: block;
+    object-fit: contain;
+    width: 85%;
+    margin: 0 auto;
+    padding-bottom: 10px;
 }
 
-/* ||| SPONSOR 3 ||| */ 
-.section.sponsor-3 {
-    min-height: 200px;
-    padding-top: 0;
-    display: none; /*!!! TEMP*/
-}
-.sponsor-3 > .section-content {
-    width: min(700px, 80%);
-    height: 100px;
-    margin: auto;
-    margin-top: 20px;
-    border: var(--colour-lightened-text-2) 1px solid;
-    border-radius: 30px;
-    align-items: start;
+/* ||| SUPPORT OUR WORK 2 ||| */
+.section.support-our-work-2 {
+    background-color: var(--colour-green-1);   
 }
 
-.section.sponsor-4 {
-    display: none; /*!!! TEMP*/
+.section.support-our-work-2 > .section-content {
+    width: min(790px, 90%);
+    column-gap: 1rem;
+    row-gap: 1rem;
 }
 
-/* ||| SPONSOR 5 ||| */ 
-.section.sponsor-5 {
-    min-height: 300px;
-    padding-top: 0;
+/* ||| SUPPORT OUR WORK 3 ||| */
+.section.support-our-work-3 {
+    padding-top: 30px;
+    padding-bottom: 30px;
     background-color: var(--colour-bg);
+    min-height: 100px;
+}
+
+.section.support-our-work-3 > h2 {
+    font-size: 3rem;
+}
+
+.section.support-our-work-3 > ul {
+    text-align: left;
+    margin: auto;
+}
+
+.section.support-our-work-3 > ul > li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    border-top: 1.5px solid black;
+    width: min(1000px, 90%);
+    margin: auto;
+}
+
+.section.support-our-work-3 > ul > .section-content {
+    margin: auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    border-radius: 50px;
+    border: solid var(--colour-lightened-text) 1px;
+    width: 77%;
+    max-width: 1200px;
+    padding: 1.25rem;
+    text-align: left;
+}
+
+.section.support-our-work-3 > ul > .section-content > * {
+    display: block;
+    padding-bottom: 10px;
+}
+
+.section.support-our-work-3 .section-content {
+    display: none;
+}
+.section.support-our-work-3 .section-content li {
+    display: list-item;
+    margin-left: 2rem;
+    list-style: outside;
+    list-style-type: disc;
+    line-height: 1.3;
+}
+
+.section.support-our-work-3 .section-content > img {
+    width: 100%;
+    border-radius: 30px;
+}
+
+.section.support-our-work-3 .section-content li.hollow-bullet {
+    list-style-type: circle;
+    margin-left: 3rem;
+}
+
+.section.support-our-work-3 .section-content button {
+    background-color: var(--colour-bg);
+    border-radius: 50px;
+    padding: 10px 15px;
+    border: solid var(--colour-lightened-text) 1px;
+    font-weight: bold;
+}
+
+.section.support-our-work-3 .section-content th {
+    background-color: var(--colour-bg);
+    text-align: center;
+    padding: 15px;
+}
+
+.section.support-our-work-3 .section-content td {
+    padding: 20px 0;
+    margin: auto;
+}
+
+/* ||| SUPPORT OUR WORK 4 ||| */
+.section.support-our-work-4 {
+    background-color: var(--colour-bg);
+    padding-top: 30px;
+}
+
+.section.support-our-work-4 > h2 {
+    font-size: 3rem;
+}
+
+.section.support-our-work-4 h1 {
+    font-size: 1.7rem;
+    padding-bottom: 15px;
+}
+
+.section.support-our-work-4 > .section-content {
+    width: min(1000px, 90%);
+    margin: auto;
+    padding-top: 30px;
+}
+
+.section.support-our-work-4 > .section-content > * {
+    display: block;
+    text-align: left;
+}
+
+.section.support-our-work-4 .raindrop-graphic {
+    position: relative;
+}
+
+.section.support-our-work-4 img {
+    position: absolute;
+    width: 3rem;
+    transform: translate(-32%, -10%);
+}
+
+.section.support-our-work-4 .section-content li {
+    display: list-item;
+    margin-left: 2rem;
+    list-style: outside;
+    list-style-type: disc;
+    line-height: 1.3;
+}
+
+.section.support-our-work-4 .section-content ul { padding-left: 50px; }
+
+.section.support-our-work-4 .section-content p {
+    padding-left: 60px;
+}
+
+.section.support-our-work-4 .section-content .right-align {
+    text-align: right;
+    padding-bottom: 30px;
+}
+
+@media (max-width: 550px) { 
+    .section.support-our-work-4 .section-content p {
+        padding-left: 10px;
+    }
+    .section.support-our-work-4 .section-content li {
+        margin-left: 0;
+    }
+}
+
+
+/* ||| SUPPORT OUR WORK 5 ||| */
+.section.support-our-work-5 {
+    padding-top: 30px;
+    padding-bottom: 0;
+}
+
+.section.support-our-work-5 > * {
+    display: block;
+}
+
+.section.support-our-work-5 > h2 {
+    font-size: 3rem;
+    line-height: 0.7;
+    padding-bottom: 1rem;
+}
+
+.section.support-our-work-5 > .section-content {
+    width: min(950px, 90%);
+    margin: auto;
+    text-align: left;
+}
+
+.section.support-our-work-5 > .section-content > *{
+    display: block;
+    padding-bottom: 15px;
+}
+
+#donut-chart {
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    margin: -150px auto 0 auto; 
+}
+
+.section.support-our-work-5 > .legend {
+    display: none;
+}
+
+.section.support-our-work-5 > .legend > *{
+    display:block;
+}
+
+@media (max-width: 800px) { 
+    #donut-chart {
+        margin-top: -120px; 
+    }
+}
+@media (max-width: 700px) { 
+    .section.support-our-work-5 > .legend {
+        display: block;
+    }
+}
+@media (max-width: 550px) { 
+    #donut-chart {
+        margin-top: -70px; 
+    }
+}
+
+/* ||| SUPPORT OUR WORK 6 ||| */
+.section.support-our-work-6 {
+    padding-top: 30px;
+    padding-bottom: 60px;
+    min-height: 100px;
+    background-color: var(--colour-bg);
+}
+
+.section.support-our-work-6 > * {
+    display: block;
+}
+
+.section.support-our-work-6 > h2 {
+    font-size: 3rem;
+    line-height: 0.7;
+    padding-bottom: 1rem;
+}
+
+.section.support-our-work-6 > .section-content {
+    margin: auto;
+    width: min(1000px, 90%);
+    text-align: left;
+}
+
+.section.support-our-work-6 > .section-content > p {
+    display: block;
+    margin-bottom: 0.5rem;
 }
 
 
