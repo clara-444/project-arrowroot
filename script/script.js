@@ -97,39 +97,49 @@ function fallbackCopyText(copyText) {
     }
 }
 
-// home-3 buttons
+// home-3 buttons, support our work buttons
 document.addEventListener('DOMContentLoaded', function () {
     const triggers = document.querySelectorAll('.hidden-content-trigger');
   
     triggers.forEach(trigger => {
-      const hiddenContent = trigger.nextElementSibling; // assumes direct sibling
-      const parentElement = trigger.closest('.home-3-element'); // the card
+        const hiddenContent = trigger.nextElementSibling; // assumes direct sibling
+        const parentElement = trigger.closest('.hidden-content-container'); // the card
   
-      // Open on trigger click
-      trigger.addEventListener('click', () => {
-        hiddenContent.style.display = 'block';
-        hiddenContent.style.zIndex = '5'; 
-        if (parentElement) {
-          parentElement.style.zIndex = '1'; // raise whole element
-        }
-      });
-  
-      // Close button inside
-      const closeBtn = hiddenContent.querySelector('.close-btn');
-      if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-          hiddenContent.style.display = 'none';
-          hiddenContent.style.zIndex = ''; // reset to stylesheet value
-          if (parentElement) {
-            parentElement.style.zIndex = ''; // reset card stacking
-          }
+        // Open on trigger click
+        trigger.addEventListener('click', () => {
+            const isHidden = window.getComputedStyle(hiddenContent).display === 'none'; // whether hiddenContent is showing 
+
+            if (isHidden) {
+                hiddenContent.style.display = 'block';
+                hiddenContent.style.zIndex = '5'; // raise hidden element
+                if (parentElement) {
+                    parentElement.style.zIndex = '1'; 
+                }
+            } else {
+                hiddenContent.style.display = 'none';
+                hiddenContent.style.zIndex = ''; // reset to stylesheet value
+                if (parentElement) {
+                    parentElement.style.zIndex = ''; // reset card stacking
+                }
+            }
         });
-      }
+  
+        // close button inside of hiddenContent 
+        const closeBtn = hiddenContent.querySelector('.close-btn');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+            hiddenContent.style.display = 'none';
+            hiddenContent.style.zIndex = ''; // reset to stylesheet value
+            if (parentElement) {
+                parentElement.style.zIndex = ''; // reset card stacking
+            }
+            });
+        } 
     });
-  });
+});
   
 
-
+// explore-program nds buttons
 document.addEventListener('DOMContentLoaded', function() {
     const backButton = document.getElementById('explore-program-questions-back-button');
     const nextButton = document.getElementById('explore-program-questions-next-button');

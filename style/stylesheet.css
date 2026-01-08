@@ -2764,6 +2764,10 @@ footer  .logo {
     margin: auto;
 }
 
+.section.support-our-work-3 > ul > li:hover {
+    cursor: pointer;
+}
+
 .section.support-our-work-3 > ul > .section-content {
     margin: auto;
     margin-bottom: 30px;
