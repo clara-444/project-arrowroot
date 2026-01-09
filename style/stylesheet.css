@@ -3098,3 +3098,131 @@ footer  .logo {
     min-height: 300px;
     padding-top: 0;
 }
+
+
+
+
+
+/* |||| YOUTH ACTIVATOR COHORTS PAGE |||| */
+.youth-activator-cohorts-title {
+    min-height: 100vh;
+    background-color: #95939311;
+}
+.youth-activator-cohorts-title > .section-content > * {
+    display: block; /* override flex to ensure elements are on seperate lines */
+}
+
+
+/* ||| YOUTH ACTIVATOR COHORTS 1 ||| */ 
+.youth-activator-cohorts-1 {
+    background-color: var(--colour-beige-2);
+    min-height: 0;
+    padding-bottom: 1.5rem;
+}
+
+.youth-activator-cohorts-1 > .section-content {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 50px;
+    border: solid var(--colour-lightened-text) 2px;
+    width: 77%;
+    max-width: 1200px;
+    padding: 1rem 1.5rem 0 1.5rem;
+    text-align: left;
+    line-height: 1.1;
+}
+
+.youth-activator-cohorts-1 > .section-content > p {
+    margin-bottom: 1rem;
+}
+
+/* ||| YOUTH ACTIVATOR COHORTS 2 ||| */ 
+.youth-activator-cohorts-2 {
+    background-color: var(--colour-beige-2);
+    min-height: 0;
+    padding-top: 0;
+}
+
+.youth-activator-cohorts-2 > h2 {
+    font-size: 2.5rem;
+    line-height: 0.7;
+    padding-bottom: 1rem;
+}
+
+.youth-activator-cohorts-2 > .expandable-section {
+    display: block;
+    margin-top: 2rem;
+}
+
+.youth-activator-cohorts-2 > .expandable-section > div {
+    display: none;
+}
+
+.youth-activator-cohorts-2 .section-content {
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    max-width: 1034px;
+    justify-content: center;
+}
+
+.youth-activator-cohorts-2 .sub-section-content {
+    max-width: 330px;
+}
+
+.youth-activator-cohorts-2 .sub-section-content > * {
+    width: 100%;
+}
+
+.youth-activator-cohorts-2 .nameplate {
+    border-radius: 50px;
+    border: solid var(--colour-lightened-text) 2px;
+    padding: 0.7rem;
+    text-align: center;
+}
+.youth-activator-cohorts-2 .nameplate > * {
+    display: block;
+}
+.youth-activator-cohorts-2 .sub-section-content {
+    position: relative;
+}
+
+.youth-activator-cohorts-2 .sub-section-content:hover .hidden-content {
+    display: flex;    
+    width: 110%;
+    min-height: 105%;
+    max-height: 120%;
+}
+
+.youth-activator-cohorts-2 .sub-section-content:hover .hidden-content.short-bio {
+    align-items: center;
+    justify-content: center;
+}
+
+.youth-activator-cohorts-2 .hidden-content {
+    display: none;
+    position: absolute;
+    width: 100%;
+    border-radius: 50px;
+    border: solid var(--colour-lightened-text) 2px;
+    padding: 1.5rem;   
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.youth-activator-cohorts-2 .hidden-content > * {
+    overflow-y: auto;
+}
+
+@media (max-width: 1148px) {
+    .youth-activator-cohorts-2 .section-content {
+        justify-content: center;
+    }
+}
+
+
+
