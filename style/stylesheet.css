@@ -1715,7 +1715,7 @@ footer  .logo {
 }
 
 .section.explore-program-5 .sub-section-content:nth-of-type(3) .question {
-    transform: translate(-47%, 18%); /*Left Down */
+    transform: translate(-47%, 15%); /*Left Down */
 }
 
 /* Shrink the font size of the overflown or uncentered answers*/
@@ -1743,6 +1743,21 @@ footer  .logo {
     .section.explore-program-5  > .section-content {
         max-width: 360px;
         font-size: 11px;
+    }
+}
+
+/* Make questions/answers text smaller on small screens */
+@media (max-width: 354px) {
+    .section.explore-program-5 .sub-section-content .question {
+        font-size: 0.7rem;
+    }
+
+    .section.explore-program-5 .sub-section-content .answer{
+        font-size: 0.7rem;
+    }
+
+    .section.explore-program-5 .sub-section-content:first-of-type .answer{
+        font-size: 0.6rem;
     }
 }
 
