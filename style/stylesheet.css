@@ -1397,6 +1397,23 @@ footer  .logo {
     margin-left: 5%;
     margin-top: 1rem;
 }
+
+.section.explore-program-1 > .logo {
+    margin-left: 5%;
+    z-index: 0;
+}
+
+/* Making the logo slightly larger */
+.section.explore-program-1 > .logo h2 {
+    font-size: 2.5rem;
+}
+
+.section.explore-program-1 > .logo img {
+    transform: scale(1.3);
+    top: 18%;
+    left: 10%;
+}
+
 .section.explore-program-1 > .img-container {
     display: block;
     position: relative;
@@ -1611,7 +1628,7 @@ footer  .logo {
     text-align: left;
 }
 
-.section.explore-program-4 > .section-content > strong {
+.section.explore-program-4 > .section-content > p:not(:first-of-type) {
     margin-top: calc(var(--element-spacing) * 3);
 }
 
@@ -1631,7 +1648,19 @@ footer  .logo {
     transform: translate(-32%, -10%);
 }
 
+.section.explore-program-4 button {
+    margin-top: calc(var(--element-spacing) * 3);
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: var(--rounded-border-size);
+    padding: 10px 40px;
+    border-width: #000000;
+    border-style: solid;
+}
 
+.section.explore-program-4 button:hover {
+    background-color: var(--colour-lightened-text);
+}
 
 
 /* ||| EXPLORE PROGRAM QUESTIONS ||| */ 
@@ -1674,6 +1703,28 @@ footer  .logo {
 
 .answer {
     top: 57%;
+}
+
+/* Move the questions slightly to the center */
+.section.explore-program-5 .sub-section-content:first-of-type .question {
+    transform: translate(-47%, 40%); /*Left Down */
+}
+
+.section.explore-program-5 .sub-section-content:nth-of-type(2) .question {
+    transform: translate(-47%, 10%); /*Left Down */
+}
+
+.section.explore-program-5 .sub-section-content:nth-of-type(3) .question {
+    transform: translate(-47%, 18%); /*Left Down */
+}
+
+/* Shrink the font size of the overflown or uncentered answers*/
+.section.explore-program-5 .sub-section-content:first-of-type .answer{
+    font-size: 0.7rem;
+}
+
+.section.explore-program-5 .sub-section-content:nth-of-type(2) .answer {
+    transform: translate(-47%, 20%); /*Left Down */
 }
 
 /* add buttons at smaller screen widths */
