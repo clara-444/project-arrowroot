@@ -3153,6 +3153,23 @@ footer  .logo {
     text-align: left;
 }
 
+.section-content.white-title-text.flex-centered{
+    flex-direction: column;
+}
+
+.section.for-educators-title button {
+    margin-top: calc(var(--element-spacing) * 3);
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: var(--rounded-border-size);
+    padding: 10px 40px;
+    border-width: #000000;
+    border-style: solid;
+}
+
+.section.for-educators-title button:hover {
+    background-color: var(--colour-lightened-text);
+}
 
 .section.for-educators-1 > .section-content.flex-centered p{
     margin-bottom: 1rem;
@@ -3265,6 +3282,20 @@ footer  .logo {
 
 .section.for-educators-faq {
     flex-direction: column;
+}
+
+.section.for-educators-faq button {
+    margin-top: calc(var(--element-spacing) * 3);
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: var(--rounded-border-size);
+    padding: 10px 40px;
+    border-width: #000000;
+    border-style: solid;
+}
+
+.section.for-educators-faq button:hover {
+    background-color: var(--colour-lightened-text);
 }
 
 .section-content.for-educators-faq-questions {
