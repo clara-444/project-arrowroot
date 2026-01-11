@@ -6,24 +6,24 @@ new Chart(ctx, {
     plugins: [ChartDataLabels],
     data: {
         labels: [
-            'operating expenses',
-            'participant support',
-            'honorariums',
-            'administrative'
+            'renumeration',
+            'digital tools',
+            'supplies + equipment',
+            'honorariums'
         ],
         datasets: [{
-            data: [47.6, 28.6, 14.3, 9.5],
+            data: [78, 1, 14, 7],
             backgroundColor: [
                 '#d1e487',
+                '#e0c59c',
                 '#2e6d1e',
-                '#ff8253',
-                '#e0c59c'
+                '#ff8253'
             ],
             hoverBackgroundColor: [ 
                 '#e3f29a', 
+                '#ecd7b8',
                 '#3f8a29', 
                 '#ffa37a', 
-                '#ecd7b8' 
             ],
             hoverOffset: 12,
             borderWidth: 0
@@ -47,7 +47,7 @@ new Chart(ctx, {
                 anchor: 'end',   // move labels outside
                 align: 'end',    // align them outward
                 textAlign: 'center',
-                offset: 8,       // spacing from the arc
+                offset: 15,       // spacing from the arc
                 formatter: (value, ctx) => {
                     const label = ctx.chart.data.labels[ctx.dataIndex];
                     const total = ctx.chart.data.datasets[0].data

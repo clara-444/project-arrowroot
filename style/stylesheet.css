@@ -3407,6 +3407,7 @@ footer  .logo {
     display:flex;
     flex-direction: column;
     width: 90%;
+    max-width: 1200px;
 }
 
 .flex-box-row{
