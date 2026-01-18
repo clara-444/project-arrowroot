@@ -579,8 +579,8 @@ ul.dropdown-options li a, ul.dropdown-options li p {
     text-wrap: nowrap;
 }
 
-/* change to vertical alignments of buttons */
-@media (max-width: 738px) {
+/* change to vertical alignments of buttons max-width: 738px*/
+@media (pointer: coarse) {
     .main-nav > ul { 
         display: none;
         transform: translateY(150%);
@@ -3298,12 +3298,14 @@ footer  .logo {
 
 /* ||| FOR EDUCATORS PAGE ||| */ 
 
+
+
 .section-wrapper.for-educators-bg {
     background-image: url("../assets/images/background/triple-green-pattern.svg");
     background-repeat: no-repeat;
     background-size: cover; 
     background-position: -1000px 700px; /*LEFT DOWN*/
-
+    display: block;
 }
 
 .section-wrapper.for-educators-bg > img {
@@ -3320,6 +3322,11 @@ footer  .logo {
 
 .section.for-educators-title > .section-content > * {
     display: block; /* override flex to ensure elements are on seperate lines */
+}
+
+.section.for-educators-title {
+    min-height: 100vh;
+    background-color: #80808030;
 }
 
 .for-educators-1{

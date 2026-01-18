@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 
     function handleDropdowns() {
-        if (window.matchMedia('(max-width: 738px)').matches) {
+        if (window.matchMedia('(pointer: coarse)').matches) {
             dropdownToggles.forEach(toggle => {
                 toggle.addEventListener('click', toggleDropdown);
             });
