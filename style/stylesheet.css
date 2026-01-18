@@ -1985,15 +1985,37 @@ footer  .logo {
     padding: 20px;
 }
 
-.mission-3 > .section-content > .data-bubble-container {
+.section.mission-3 > .section-content.flex-centered {
+    flex-direction: column;
+}
+
+.mission-3 > .section-content > .data-bubble-container.flex-box {
+    display:flex;
+    flex-wrap: nowrap;
+    width: 50%;
     justify-content: center;
     margin-top: 10px;
 }
 
+.mission-3 > .section-content > .data-bubble-container.flex-box .flex-box-col-1{
+    flex-basis: 35%;
+}
 
-.arrow {
+.mission-3 > .section-content > .data-bubble-container.flex-box .flex-box-col-2{
+    flex-basis: 10%;
+}
+
+.mission-3 > .section-content > .data-bubble-container.flex-box .flex-box-col-3{
+    flex-basis: 25.5%;
+}
+.mission-3 > .section-content > .data-bubble-container.flex-box .flex-box-col-4{
+    flex-basis: 25.5%;
+}
+
+.mission-3 > .section-content .arrow {
   display: flex;
-  width: 7%;
+  width: 100%;
+  min-width: 80px;
   height: 113.2px;
   justify-content: center;
   align-items: center;
@@ -2007,116 +2029,92 @@ footer  .logo {
     font-style: italic;
 }
 
-.mission-3 > .section-content > .data-bubble-container > .circle > .number {
+.mission-3 > .section-content > .data-bubble-container .number {
     font-family: var(--font-baskerville);
     font-size: 4.5rem;
     margin-bottom: 0;
    
 }
 
-.mission-3 > .section-content > .data-bubble-container > .circle > .description { 
+.mission-3 > .section-content > .data-bubble-container .description { 
     margin-top: 0;
     margin-bottom: 0;
 }
 
-.mission-3 > .section-content > .data-bubble-container > .blue11 { 
-    width: 280px;
-    height: 280px;
-    transform: translate(0, -10%);
+
+.mission-3 > .section-content > .data-bubble-container .circle.blue11 { 
+    width: 300px;
+    height: 300px;
+    transform: translate(0, -15%);
 }
 
 
-.mission-3 > .section-content > .data-bubble-container > .brown2 { 
+.mission-3 > .section-content > .data-bubble-container .brown2 { 
     width: 260px;
     height: 260px;
-    transform: translate(0, 10%);
+    transform: translate(0, 15%);
 }
 
-.mission-3 > .section-content > .data-bubble-container > .blue11 > p { 
+.mission-3 > .section-content > .data-bubble-container .circle.blue11 p { 
+    margin: 0 0;
+}
+
+.mission-3 > .section-content > .data-bubble-container .blue11 .number { 
+    margin: 0px 0;
+}
+
+.mission-3 > .section-content > .data-bubble-container .brown2 p { 
+    margin: 0px 0;
+}
+
+.mission-3 > .section-content > .data-bubble-container .brown2 .number { 
     margin: -15px 0;
 }
 
-.mission-3 > .section-content > .data-bubble-container > .blue11 > .number { 
-    margin: -15px 0;
-}
-
-.mission-3 > .section-content > .data-bubble-container > .brown2 > p { 
-    margin: -15px 0;
-}
-
-.mission-3 > .section-content > .data-bubble-container > .brown2 > .number { 
-    margin: -15px 0;
-}
-
-
-@media (max-width: 1080px) {
-    .arrow {
-        width: 5%;
-        
+/* Switching to flex-direction to "column" when the screen gets small enough*/
+@media (max-width: 1115px) {
+    .mission-3 > .section-content > .data-bubble-container.flex-box {
+        flex-direction: column;
+    }
+    .mission-3 > .section-content > .data-bubble-container .circle.blue11 { 
+        transform: translate(0, 0);
+    }
+    .mission-3 > .section-content > .data-bubble-container .brown2 { 
+        transform: translate(0, 0);
+    }
+    
+    /* rotating the arrow graphic when in column format */
+    .mission-3 > .section-content .arrow {
+        min-width: 113.2px;
+        clip-path: polygon(
+            77.8% 0,
+            77.8% 53.3%,
+            100% 53.3%,
+            50% 100%,
+            0 53.3%,
+            22.2% 53.3%,
+            22.2% 0
+        );
     }
     .arrow p {
-        font-size: 0.8rem;
-        margin-left: 15px;
-    }
-
-    .mission-3 > .section-content > .data-bubble-container > .circle.yellow-1 { 
-        width: 272px;
-        height: 272px;
-    }
-}
-
-@media (max-width: 1000px) {
-    .mission-3 > .section-content > .data-bubble-container > .brown2 { 
-        transform: translate(100%, -20%);
-    }
-
-    .mission-3 > .section-content > .data-bubble-container > .circle.yellow-1 { 
-        transform: translate(0, 50%);
-    }
-
-        .mission-3 > .section-content > .data-bubble-container > .circle.blue11 { 
-        transform: translate(0, 0);
-    }
-    .arrow {
-        transform: translate(0, 120%);
-    }
-}
-
-@media (max-width: 705px) {
-
-    .mission-3 > .section-content > .data-bubble-container > .circle.yellow-1 { 
-        transform: translate(0, 0);
-    }
-
-    .arrow {
-        transform: translate(0,0);
-        width: 86.2px;
-        height: 69px;
-        
-        clip-path: polygon(0 57.9%, 12.9% 57.9%, 12.9% 0, 87.1% 0, 87.1% 57.9%, 100% 57.9%, 50% 100%);
-    }
-
-    .mission-3 > .section-content > .data-bubble-container > .brown2 { 
-        transform: translate(0%, 0);
+        margin: auto;
     }
 }
 
 @media (max-width: 555px) {
-    .mission-3 > .section-content > .data-bubble-container > .circle.yellow-1 { 
-        width: 230px;
-        height: 230px;
+    .mission-3 > .section-content > .data-bubble-container .circle.yellow-1 { 
+        width: 260px;
+        height: 260px;
     }
-    .mission-3 > .section-content > .data-bubble-container > .blue11 { 
-        width: 230px;
-        height: 230px;
-        transform: translate(0,0);
-    }
-    .mission-3 > .section-content > .data-bubble-container > .brown2 { 
-        width: 210px;
-        height: 210px;
+    .mission-3 > .section-content > .data-bubble-container .circle.blue11 { 
+        width: 250px;
+        height: 250px;
+
+    }.mission-3 > .section-content > .data-bubble-container .circle.brown2 { 
+        width: 220px;
+        height: 220px;
     }
 }
-
 
 /* ||| MISSION 5 ||| */ 
 .section.mission-5 {
