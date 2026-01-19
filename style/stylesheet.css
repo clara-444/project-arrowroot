@@ -393,15 +393,17 @@ td, th { border: solid var(--colour-lightened-text) 1px; }
     min-height: 200px;
     transform: translate(-50%, -50%);
     border: black 1px solid;
-    border-radius: 30px;
+    border-radius: 50px;
     flex-direction: column;
 }
 
-.under-construction a {
-    font-family: var(--font-csn);
-    font-style: italic;
-    letter-spacing: 0.5px;
-    font-size: 40px;
+.under-construction button {
+    margin-top: 1rem;
+    background-color: var(--colour-bg);
+    border-radius: 50px;
+    padding: 10px 15px;
+    border: solid var(--colour-lightened-text) 1px;
+    font-weight: bold;
 }
 
 /* colour in rounded section of footer*/
@@ -580,7 +582,7 @@ ul.dropdown-options li a, ul.dropdown-options li p {
 }
 
 /* change to vertical alignments of buttons max-width: 738px*/
-@media (pointer: coarse) {
+@media (pointer: coarse) or (max-width: 738px) {
     .main-nav > ul { 
         display: none;
         transform: translateY(150%);
@@ -600,14 +602,14 @@ ul.dropdown-options li a, ul.dropdown-options li p {
     .dropdown-options {
         position: absolute;
         top: 0px;
-        right: 110px;
+        right: 0px;
         margin-left: calc(var(--element-spacing) / 2);
         border-radius: 10px;
         background: #404040d7;
         justify-content: center;
         align-items: center;
-        width: 200px;
-        height: 120px;
+        width: 220px;
+        height: 160px;
         gap: 10px;
     }
     .dropdown-toggle:hover .dropdown-options {
@@ -619,9 +621,6 @@ ul.dropdown-options li a, ul.dropdown-options li p {
     }
 }
 @media (max-width: 555px) { 
-    .dropdown-options {
-        right: 100px;
-    }
     .main-nav > button {
         transform: translateY(40%);
     }
@@ -2580,42 +2579,42 @@ footer  .logo {
 
 
 /* ||| CURRENT EVENTS 1 ||| */ 
-.section.current-events-1 {
+.section.community-gallery-1 {
     background-color: var(--colour-beige-2);    
     padding: var(--section-padding-spacing) calc(var(--section-padding) / 2);
 }
 
-.section.current-events-1 > h2 {
+.section.community-gallery-1 > h2 {
     line-height: 1;
 }
 
-.current-events-1 > .section-content {
+.community-gallery-1 > .section-content {
     width: 100%;
     max-width: 1400px; 
     margin: 2rem auto 0 auto; /* centers element within parent */
 }
 
-.current-events-1 > .section-content > .sub-section-content {
+.community-gallery-1 > .section-content > .sub-section-content {
     width: 280px;
     text-align: center;
 } 
 
 /* sub-section content */
-.current-events-1 > .section-content > .sub-section-content > * {
+.community-gallery-1 > .section-content > .sub-section-content > * {
     display: block; }
-.current-events-1 > .section-content > .sub-section-content > img {
+.community-gallery-1 > .section-content > .sub-section-content > img {
     object-fit: contain;
     width: 85%;
     margin: 0 auto; } 
-.current-events-1 > .section-content > .sub-section-content > h3 {
+.community-gallery-1 > .section-content > .sub-section-content > h3 {
     font-style: normal;
     margin-top: 0.9rem;
     margin-bottom: 0.4rem;  }  
-.current-events-1 > .section-content > .sub-section-content > p {
+.community-gallery-1 > .section-content > .sub-section-content > p {
     margin-bottom: 1rem;
 } 
 
-.section.current-events-1 > .flex-centered {
+.section.community-gallery-1 > .flex-centered {
     width: 90%;
     max-width: 980px; /*70% of 1400px (section-content max-width)*/
     border: var(--colour-lightened-text-2) solid 1px;
@@ -2626,31 +2625,31 @@ footer  .logo {
 
 
 /* ||| CURRENT EVENTS 2 ||| */ 
-.section.current-events-2 {
+.section.current-events-1 {
     padding-top: 0;
     padding-bottom: 0;
     min-height: 0;
 }
 
-.current-events-2 > .bg-media {
+.current-events-1 > .bg-media {
     height: fit-content;
     width: 100%;
     object-fit: contain;   
 }
 
-.current-events-2-graphic {
+.current-events-1-graphic {
     display: none;
     top: calc(100vw * 625/1366); /* position to always be adjacent to bg-media using image's scael scale*/
 }
 
-.current-events-2 > .section-title-rounded-inverse {
+.current-events-1 > .section-title-rounded-inverse {
     background-color: var(--colour-bg);
     width: min(90%, 400px);
     border: var(--colour-lightened-text-2) solid 1px;
     border-top: none;
 }
 
-.current-events-2 > .section-content {
+.current-events-1 > .section-content {
     position: relative;
     max-width: min(80%, 1000px);
     margin: 8% auto 4% auto;
@@ -2658,16 +2657,16 @@ footer  .logo {
 }
 
 /* sub-section content */
-.current-events-2 > .section-content > .sub-section-content {
+.current-events-1 > .section-content > .sub-section-content {
     width: 230px;
 }
-.current-events-2 > .section-content > .sub-section-content > * {
+.current-events-1 > .section-content > .sub-section-content > * {
     display: block;
 }
-.current-events-2 > .section-content > .sub-section-content > img {
+.current-events-1 > .section-content > .sub-section-content > img {
     width: 100%;
 }
-.current-events-2 > .section-content > .sub-section-content > button {
+.current-events-1 > .section-content > .sub-section-content > button {
     position: relative;
     width: 88%;
     margin-top: 0.5rem;
@@ -2681,12 +2680,12 @@ footer  .logo {
 }
 
 /* sub-section arrows */
-.current-events-2 > .section-content > .sub-section-content > button > .horizontal-line {
+.current-events-1 > .section-content > .sub-section-content > button > .horizontal-line {
     width: 25%;
     top: 50.5%;
     left: 65%;
 }
-.current-events-2 > .section-content > .sub-section-content > button > .right-arrow {
+.current-events-1 > .section-content > .sub-section-content > button > .right-arrow {
     position: absolute;
     top: 46%;
     left: 88%;
@@ -2696,29 +2695,29 @@ footer  .logo {
 
 
 /* graphics */
-.current-events-2-graphic-1, .current-events-2-graphic-2 {
+.current-events-1-graphic-1, .current-events-1-graphic-2 {
     position: absolute;
     bottom: -7%;
 }
-.current-events-2-graphic-1 {
+.current-events-1-graphic-1 {
     left: 45px;
 }
-.current-events-2-graphic-2 {
+.current-events-1-graphic-2 {
     right: 60px;
 }
 
 /* add buttons at smaller screen widths */
 @media (max-width: 1144px) {
-    .current-events-2-graphic {
+    .current-events-1-graphic {
         display: block;
     }
-    .current-events-2-graphic-1, .current-events-2-graphic-2 {
+    .current-events-1-graphic-1, .current-events-1-graphic-2 {
         bottom: 0;
     }
-    #current-events-2-back-button, #current-events-2-next-button {
+    #current-events-1-back-button, #current-events-1-next-button {
         display: block;
     }
-    .current-events-2 > .section-content { 
+    .current-events-1 > .section-content { 
         margin-bottom: 1%;
         margin-top: 4%;
         padding-bottom: 5%;
@@ -2728,10 +2727,10 @@ footer  .logo {
 
 /* remove background elements */
 @media (max-width: 838px) {
-    .current-events-2-graphic, .current-events-2-graphic-1, .current-events-2-graphic-2, .current-events-2 > .bg-media {
+    .current-events-1-graphic, .current-events-1-graphic-1, .current-events-1-graphic-2, .current-events-1 > .bg-media {
         display: none;
     }
-    .current-events-2 {
+    .current-events-1 {
         background-color: #d0d3d2;
         padding: 2%;
     }
@@ -2739,7 +2738,7 @@ footer  .logo {
         background: none;
         background-color: #d0d3d0;
     }
-    .current-events-2 > .section-content {
+    .current-events-1 > .section-content {
         margin-bottom: 0;
     }
 }

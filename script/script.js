@@ -14,7 +14,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 
     function handleDropdowns() {
-        if (window.matchMedia('(pointer: coarse)').matches) {
+        const isSmallScreen = window.matchMedia('(max-width: 738px)').matches; 
+        const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
+
+        if (isSmallScreen || isTouchDevice) {
             dropdownToggles.forEach(toggle => {
                 toggle.addEventListener('click', toggleDropdown);
             });
@@ -189,9 +192,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // current events 2 buttons
 document.addEventListener('DOMContentLoaded', function() {
-    const backButton = document.getElementById('current-events-2-back-button');
-    const nextButton = document.getElementById('current-events-2-next-button');
-    const items = document.querySelectorAll('.current-events-2-list-item');
+    const backButton = document.getElementById('current-events-1-back-button');
+    const nextButton = document.getElementById('current-events-1-next-button');
+    const items = document.querySelectorAll('.current-events-1-list-item');
     let index = 0;
 
     // Hide all items except the first one
