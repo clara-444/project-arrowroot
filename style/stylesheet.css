@@ -2394,7 +2394,11 @@ footer  .logo {
     transform: translateX(-50%);
 }
 
-.sdg-pages > .sdg-page > .section-content > button:hover {
+.sdg-pages > .sdg-page > .section-content:hover {
+    cursor: pointer; /* To make the entire section content feels clickable */
+}
+
+.sdg-pages > .sdg-page > .section-content:hover button {
     background-color: rgba(128, 128, 128, 0.277);
 }
 
@@ -2504,7 +2508,11 @@ footer  .logo {
 }
 
 .meet-our-team-1 > .section-content > div > img {
-    width: 380px;
+    width: 380px; /* Making sure the title fits in the box*/
+}
+
+.meet-our-team-1 > .section-content > div > p {
+    font-size: smaller;
 }
 
 /* set absolute positioning for namecard text & linkedin button */
