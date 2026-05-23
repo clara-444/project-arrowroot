@@ -631,7 +631,7 @@ ul.dropdown-options li a, ul.dropdown-options li p {
 }
 
 /* change to vertical alignments of buttons max-width: 738px*/
-@media (pointer: coarse) or (max-width: 738px) {
+@media (max-width: 895px) {
     .main-nav > ul { 
         display: none;
         transform: translateY(150%);
